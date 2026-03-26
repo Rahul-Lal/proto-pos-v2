@@ -29,32 +29,32 @@
                         <ColumnDefinition Width="300*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button x:Name="btnSingleOlympian" Content="Single Olympian" Width="280" Height="132" FontSize="16" Margin="0,260,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnSingleOlympian_Click"/>
-                    <Button x:Name="btnDoubleOlympian" Content="Double Olympian" Width="280" Height="133" FontSize="16" Margin="0,260,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnDoubleOlympian_Click" RenderTransformOrigin="-0.356,0.981" Grid.Column="1"/>
-                    <Button x:Name="btnSingleParisian" Content="Single Parisian" Width="250" Height="134" FontSize="16" Margin="0,260,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnSingleParisian_Click" Grid.Column="2"/>
-                    <Button x:Name="btnDoubleParisian" Content="Double Parisian" Width="250" Height="134" FontSize="16" Margin="0,260,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnDoubleParisian_Click" RenderTransformOrigin="0.5,0.5" Grid.Column="3"/>
-                    <Button x:Name="btnSingleRoma" Content="Single Roma" Width="250" Height="134" FontSize="16" Margin="24,260,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnSingleRoma_Click" Grid.Column="4"/>
-                    <Button x:Name="btnDoubleRoma" Content="Double Roma" Height="134" FontSize="16" Margin="0,260,0,0" VerticalAlignment="Top" Click="btnDoubleRoma_Click" HorizontalAlignment="Center" Width="250" Grid.Row="1" RenderTransformOrigin="0.167,0.55"/>
-                    <Button x:Name="btnSingleMatador" Content="Single Matador" Width="250" Height="133" FontSize="16" Margin="0,260,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnSingleMatador_Click" Grid.Column="1" Grid.Row="1"/>
-                    <Button x:Name="btnDoubleMatador" Content="Double Matador" Width="250" Height="133" FontSize="16" Margin="0,260,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnDoubleMatador_Click" Grid.Column="2" Grid.Row="1"/>
-                    <Button x:Name="btnSingleKaiser" Content="Single Kaiser" Width="250" Height="134" FontSize="16" Margin="0,260,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnSingleKaiser_Click" RenderTransformOrigin="0.582,0.52" Grid.Row="1" Grid.Column="3"/>
-                    <Button x:Name="btnDoubleKaiser" Content="Double Kaiser" Width="250" Height="134" FontSize="16" Margin="0,260,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnDoubleKaiser_Click" Grid.Column="4" Grid.Row="1"/>
+                    <Button x:Name="btnSingleOlympian" Content="Single Olympian" Width="266" Height="320" FontSize="16" Margin="10,37,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnSingleOlympian_Click"/>
+                    <Button x:Name="btnDoubleOlympian" Content="Double Olympian" Width="266" Height="320" FontSize="16" Margin="9,37,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnDoubleOlympian_Click" RenderTransformOrigin="-0.356,0.981" Grid.Column="1"/>
+                    <Button x:Name="btnSingleParisian" Content="Single Parisian" Width="266" Height="320" FontSize="16" Margin="10,37,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnSingleParisian_Click" Grid.Column="2"/>
+                    <Button x:Name="btnDoubleParisian" Content="Double Parisian" Width="266" Height="320" FontSize="16" Margin="9,37,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnDoubleParisian_Click" RenderTransformOrigin="0.5,0.5" Grid.Column="3"/>
+                    <Button x:Name="btnSingleRoma" Content="Single Roma" Width="266" Height="320" FontSize="16" Margin="0,37,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnSingleRoma_Click" Grid.Column="4"/>
+                    <Button x:Name="btnDoubleRoma" Content="Double Roma" Height="320" FontSize="16" Margin="10,38,0,0" VerticalAlignment="Top" Click="btnDoubleRoma_Click" HorizontalAlignment="Left" Width="266" Grid.Row="1" RenderTransformOrigin="0.167,0.55"/>
+                    <Button x:Name="btnSingleMatador" Content="Single Matador" Width="266" Height="320" FontSize="16" Margin="9,38,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnSingleMatador_Click" Grid.Column="1" Grid.Row="1"/>
+                    <Button x:Name="btnDoubleMatador" Content="Double Matador" Width="266" Height="320" FontSize="16" Margin="10,38,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnDoubleMatador_Click" Grid.Column="2" Grid.Row="1"/>
+                    <Button x:Name="btnSingleKaiser" Content="Single Kaiser" Width="266" Height="320" FontSize="16" Margin="9,38,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnSingleKaiser_Click" RenderTransformOrigin="0.582,0.52" Grid.Row="1" Grid.Column="3"/>
+                    <Button x:Name="btnDoubleKaiser" Content="Double Kaiser" Width="266" Height="320" FontSize="16" Margin="10,38,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnDoubleKaiser_Click" Grid.Column="4" Grid.Row="1"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="btnChickenOther" Header="Chicken + Other" Width="250" Height="100" FontSize="16">
-                
+
             </TabItem>
             <TabItem x:Name="btnSides" Header="Sides" Width="250" Height="100" FontSize="16">
-                
+
             </TabItem>
             <TabItem x:Name="btnDesserts" Header="Desserts" Width="250" Height="100" FontSize="16" HorizontalAlignment="Center" Margin="0,1,0,-1">
-                
+
             </TabItem>
             <TabItem x:Name="btnDrinks" Header="Drinks" Width="250" Height="100" FontSize="16">
-                
+
             </TabItem>
             <TabItem x:Name="btnCombo" Header="Combos + Add-Ons" Width="250" Height="100" FontSize="16">
-                
+
             </TabItem>
         </TabControl>
 
