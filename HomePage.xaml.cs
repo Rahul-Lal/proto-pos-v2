@@ -35,6 +35,68 @@ namespace proto_pos_v2
         int AddOnCount = 0;
         public double total = 0.00;
 
+        private void RefreshUI()
+        {
+            txtOutput.Text = string.Join("\n", orderLines);
+            txtPrices.Text = string.Join("\n", prices.Select(p => p.ToString("C")));
+
+            total = prices.Sum();
+            txtTotal.Text = total.ToString("C");
+
+            orderLinesViaConsole();
+        }
+
+        public void Repeat()
+        {
+            if (orderLines.Count == 0)
+                return;
+
+            string lastItem = orderLines[orderLines.Count - 1];
+            double lastPrice = prices[prices.Count - 1];
+
+            orderLines.Add(lastItem);
+            prices.Add(lastPrice);
+
+            RefreshUI();
+        }
+
+        private void btnRepeat_Click(object sender, RoutedEventArgs e)
+        {
+            Repeat();
+        }
+
+        private void orderLinesViaConsole()
+        {
+            Console.WriteLine("Orders:");
+
+            int count = Math.Min(orderLines.Count, prices.Count);
+            for (int i = 0; i < count; i++)
+            {
+                Console.WriteLine($"{orderLines[i]}: {prices[i]}");
+            }
+
+            if (orderLines.Count != prices.Count)
+            {
+                Console.WriteLine($"Warning: orderLines ({orderLines.Count}) and prices ({prices.Count}) counts differ.");
+            }
+
+            Console.WriteLine("------ END OF LINE ------");
+        }
+
+        private void setDrinkFlavour(string drink)
+        {
+            if (isDrinkLarge == true || isDrinkMedium == true || isDrinkSmall == true)
+            {
+                setDrinkSize();
+                txtOutput.Text += $"{drink}\n";
+                Console.WriteLine(txtOutput.Text);
+            }
+            else
+            {
+                MessageBox.Show("Please Select a size first.");
+            }
+        }
+
         private void btnSingleOlympian_Click(object sender, RoutedEventArgs e)
         {
             MakeComboWindow makeCombo = new MakeComboWindow();
@@ -258,20 +320,6 @@ namespace proto_pos_v2
         private void btnTiramisuShake_Click(object sender, RoutedEventArgs e)
         {
             printMenuItem("Tiramisu Shake", 6.0);
-        }
-
-        private void setDrinkFlavour(string drink)
-        {
-            if (isDrinkLarge == true || isDrinkMedium == true || isDrinkSmall == true)
-            {
-                setDrinkSize();
-                txtOutput.Text += $"{drink}\n";
-                Console.WriteLine(txtOutput.Text);
-            }
-            else
-            {
-                MessageBox.Show("Please Select a size first.");
-            }
         }
 
         private void btnCoke_Click(object sender, RoutedEventArgs e)
@@ -648,54 +696,6 @@ namespace proto_pos_v2
             {
                 MessageBox.Show("You have already selected a staff meal for this order.");
             }
-        }
-
-        private void RefreshUI()
-        {
-            txtOutput.Text = string.Join("\n", orderLines);
-            txtPrices.Text = string.Join("\n", prices.Select(p => p.ToString("C")));
-
-            total = prices.Sum();
-            txtTotal.Text = total.ToString("C");
-
-            orderLinesViaConsole();
-        }
-
-        public void Repeat()
-        {
-            if (orderLines.Count == 0)
-                return;
-
-            string lastItem = orderLines[orderLines.Count - 1];
-            double lastPrice = prices[prices.Count - 1];
-
-            orderLines.Add(lastItem);
-            prices.Add(lastPrice);
-
-            RefreshUI();
-        }
-
-        private void btnRepeat_Click(object sender, RoutedEventArgs e)
-        {
-            Repeat();
-        }
-
-        private void orderLinesViaConsole()
-        {
-            Console.WriteLine("Orders:");
-
-            int count = Math.Min(orderLines.Count, prices.Count);
-            for (int i = 0; i < count; i++)
-            {
-                Console.WriteLine($"{orderLines[i]}: {prices[i]}");
-            }
-
-            if (orderLines.Count != prices.Count)
-            {
-                Console.WriteLine($"Warning: orderLines ({orderLines.Count}) and prices ({prices.Count}) counts differ.");
-            }
-
-            Console.WriteLine("------ END OF LINE ------");
         }
     }
 }
