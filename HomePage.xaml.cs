@@ -99,121 +99,121 @@ namespace proto_pos_v2
 
         private void btnSingleOlympian_Click(object sender, RoutedEventArgs e)
         {
-            MakeComboWindow makeCombo = new MakeComboWindow();
+            // MakeComboWindow makeCombo = new MakeComboWindow();
             comboOption("Single Olympian", 12.50);
         }
 
         private void btnDoubleOlympian_Click(object sender, RoutedEventArgs e)
         {
-            MakeComboWindow makeCombo = new MakeComboWindow();
+            // MakeComboWindow makeCombo = new MakeComboWindow();
             comboOption("Double Olympian", 14.50);
         }
 
         private void btnSingleParisian_Click(object sender, RoutedEventArgs e)
         {
-            MakeComboWindow makeCombo = new MakeComboWindow();
+            // MakeComboWindow makeCombo = new MakeComboWindow();
             comboOption("Single Parisian", 12.50);
         }
 
         private void btnDoubleParisian_Click(object sender, RoutedEventArgs e)
         {
-            MakeComboWindow makeCombo = new MakeComboWindow();
+            // MakeComboWindow makeCombo = new MakeComboWindow();
             comboOption("Double Parisian", 14.50);
         }
 
         private void btnSingleRoma_Click(object sender, RoutedEventArgs e)
         {
-            MakeComboWindow makeCombo = new MakeComboWindow();
+            // MakeComboWindow makeCombo = new MakeComboWindow();
             comboOption("Single Roma", 12.50);
         }
 
         private void btnDoubleRoma_Click(object sender, RoutedEventArgs e)
         {
-            MakeComboWindow makeCombo = new MakeComboWindow();
+            // MakeComboWindow makeCombo = new MakeComboWindow();
             comboOption("Double Roma", 14.50);
         }
 
         private void btnSingleMatador_Click(object sender, RoutedEventArgs e)
         {
-            MakeComboWindow makeCombo = new MakeComboWindow();
+            // MakeComboWindow makeCombo = new MakeComboWindow();
             comboOption("Single Matador", 12.50);
         }
 
         private void btnDoubleMatador_Click(object sender, RoutedEventArgs e)
         {
-            MakeComboWindow makeCombo = new MakeComboWindow();
+            // MakeComboWindow makeCombo = new MakeComboWindow();
             comboOption("Double Matador", 14.50);
         }
 
         private void btnSingleKaiser_Click(object sender, RoutedEventArgs e)
         {
-            MakeComboWindow makeCombo = new MakeComboWindow();
+            // MakeComboWindow makeCombo = new MakeComboWindow();
             comboOption("Single Kaiser", 12.50);
         }
 
         private void btnDoubleKaiser_Click(object sender, RoutedEventArgs e)
         {
-            MakeComboWindow makeCombo = new MakeComboWindow();
+            // MakeComboWindow makeCombo = new MakeComboWindow();
             comboOption("Double Kaiser", 14.50);
         }
 
         private void btnNashvilleHot_Click(object sender, RoutedEventArgs e)
         {
-            MakeComboWindow makeCombo = new MakeComboWindow();
+            // MakeComboWindow makeCombo = new MakeComboWindow();
             comboOption("Nashville Hot", 10.50);
         }
 
         private void btnKyotoKatsu_Click(object sender, RoutedEventArgs e)
         {
-            MakeComboWindow makeCombo = new MakeComboWindow();
+            // MakeComboWindow makeCombo = new MakeComboWindow();
             comboOption("Kyoto Katsu", 12.50);
         }
 
         private void btnMarrakesh_Click(object sender, RoutedEventArgs e)
         {
-            MakeComboWindow makeCombo = new MakeComboWindow();
+            // MakeComboWindow makeCombo = new MakeComboWindow();
             comboOption("Marrakesh Chicken", 14.50);
         }
 
         private void btnBaja_Click(object sender, RoutedEventArgs e)
         {
-            MakeComboWindow makeCombo = new MakeComboWindow();
+            // MakeComboWindow makeCombo = new MakeComboWindow();
             comboOption("Baja Chicken", 14.50);
         }
 
         private void btnSeoulFire_Click(object sender, RoutedEventArgs e)
         {
-            MakeComboWindow makeCombo = new MakeComboWindow();
+            // MakeComboWindow makeCombo = new MakeComboWindow();
             comboOption("Seoul Fire", 14.50);
         }
 
         private void btnBangkokSatay_Click(object sender, RoutedEventArgs e)
         {
-            MakeComboWindow makeCombo = new MakeComboWindow();
+            // MakeComboWindow makeCombo = new MakeComboWindow();
             comboOption("Bangkok Satay Chicken", 12.50);
         }
 
         private void btnOaxaca_Click(object sender, RoutedEventArgs e)
         {
-            MakeComboWindow makeCombo = new MakeComboWindow();
+            // MakeComboWindow makeCombo = new MakeComboWindow();
             comboOption("Oaxaca Veggie", 10.50);
         }
 
         private void btnBombay_Click(object sender, RoutedEventArgs e)
         {
-            MakeComboWindow makeCombo = new MakeComboWindow();
+            // MakeComboWindow makeCombo = new MakeComboWindow();
             comboOption("Bombay Veggie", 12.50);
         }
 
         private void btnNordic_Click(object sender, RoutedEventArgs e)
         {
-            MakeComboWindow makeCombo = new MakeComboWindow();
+            // // MakeComboWindow makeCombo = new MakeComboWindow();
             comboOption("Nordic Salmon", 12.50);
         }
 
         private void btnHavana_Click(object sender, RoutedEventArgs e)
         {
-            MakeComboWindow makeCombo = new MakeComboWindow();
+            // MakeComboWindow makeCombo = new MakeComboWindow();
             comboOption("Havana Fish", 12.50);
         }
 
@@ -384,7 +384,7 @@ namespace proto_pos_v2
         {
             //string chosenCombo;
 
-            //// MakeComboWindow makeCombo = new MakeComboWindow();
+            //// // MakeComboWindow makeCombo = new MakeComboWindow();
             //makeCombo.ShowDialog();
 
             //if (makeCombo.makeLarge == true)
