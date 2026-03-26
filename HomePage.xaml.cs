@@ -382,67 +382,67 @@ namespace proto_pos_v2
 
         private void comboOption(string burger, double price)
         {
-            string chosenCombo;
+            //string chosenCombo;
 
-            MakeComboWindow makeCombo = new MakeComboWindow();
-            makeCombo.ShowDialog();
+            //// MakeComboWindow makeCombo = new MakeComboWindow();
+            //makeCombo.ShowDialog();
 
-            if (makeCombo.makeLarge == true)
-            {
-                chosenCombo = burger.ToUpper() + " LARGE COMBO\n" +
-                    burger + " Burger \n" +
-                    "Large Fries \n" +
-                    "Large Drink \n";
+            //if (makeCombo.makeLarge == true)
+            //{
+            //    chosenCombo = burger.ToUpper() + " LARGE COMBO\n" +
+            //        burger + " Burger \n" +
+            //        "Large Fries \n" +
+            //        "Large Drink \n";
 
-                txtOutput.Text += chosenCombo;
-                orderLines.Add(chosenCombo);
+            //    txtOutput.Text += chosenCombo;
+            //    orderLines.Add(chosenCombo);
 
-                txtPrices.Text += "$" + (price + 7.5).ToString() + ".00\n\n\n\n";
-                total += price + 7.5;
-                prices.Add(price + 7.5);
-                totalAmount(total);
+            //    txtPrices.Text += "$" + (price + 7.5).ToString() + ".00\n\n\n\n";
+            //    total += price + 7.5;
+            //    prices.Add(price + 7.5);
+            //    totalAmount(total);
 
-                makeCombo.makeLarge = false;
-                makeCombo.Close();
-            }
-            else if (makeCombo.makeMedium == true)
-            {
-                chosenCombo = burger.ToUpper() + " MEDIUM COMBO\n" +
-                    burger + " Burger \n" +
-                    "Medium Fries \n" +
-                    "Medium Drink \n";
+            //    makeCombo.makeLarge = false;
+            //    makeCombo.Close();
+            //}
+            //else if (makeCombo.makeMedium == true)
+            //{
+            //    chosenCombo = burger.ToUpper() + " MEDIUM COMBO\n" +
+            //        burger + " Burger \n" +
+            //        "Medium Fries \n" +
+            //        "Medium Drink \n";
 
-                txtOutput.Text += chosenCombo;
-                orderLines.Add(chosenCombo);
+            //    txtOutput.Text += chosenCombo;
+            //    orderLines.Add(chosenCombo);
 
-                txtPrices.Text += "$" + (price + 5).ToString() + "0\n\n\n\n";
-                total += price + 5;
-                prices.Add(price + 5);
-                totalAmount(total);
+            //    txtPrices.Text += "$" + (price + 5).ToString() + "0\n\n\n\n";
+            //    total += price + 5;
+            //    prices.Add(price + 5);
+            //    totalAmount(total);
 
-                makeCombo.makeMedium = false;
-                makeCombo.Close();
-            }
-            else if (makeCombo.makeJustBurger == true)
-            {
-                chosenCombo = burger + " Burger \n";
-                txtOutput.Text += chosenCombo;
-                orderLines.Add(chosenCombo);
+            //    makeCombo.makeMedium = false;
+            //    makeCombo.Close();
+            //}
+            //else if (makeCombo.makeJustBurger == true)
+            //{
+            //    chosenCombo = burger + " Burger \n";
+            //    txtOutput.Text += chosenCombo;
+            //    orderLines.Add(chosenCombo);
 
-                txtPrices.Text += "$" + price + "0\n";
-                total += price;
-                prices.Add(price);
-                totalAmount(total);
+            //    txtPrices.Text += "$" + price + "0\n";
+            //    total += price;
+            //    prices.Add(price);
+            //    totalAmount(total);
 
-                makeCombo.makeJustBurger = false;
-                makeCombo.Close();
-            }
-            else
-            {
-                makeCombo.Close();
-            }
-            Console.WriteLine("Combo:");
-            orderLinesViaConsole();
+            //    makeCombo.makeJustBurger = false;
+            //    makeCombo.Close();
+            //}
+            //else
+            //{
+            //    makeCombo.Close();
+            //}
+            //Console.WriteLine("Combo:");
+            //orderLinesViaConsole();
         }
 
         private void printMenuItem(string menuItem, double price)
