@@ -8,6 +8,13 @@
       Title="Burger National" Background="#FF3F7A8E">
 
     <Grid Name="grdLayout" MaxWidth="1920" Width="1920">
-        
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" Margin="0,0,1475,0">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                <TextBlock x:Name="txtOutput" TextWrapping="Wrap" FontSize="20" Width="346" MaxHeight="1080" Background="#FFBBBBBB" Foreground="#FF0058CE" Margin="0,0,0,236" TextAlignment="Left" Height="1078" VerticalAlignment="Top" />
+                <TextBlock x:Name="txtPrices" TextWrapping="Wrap" FontSize="20" Width="75" MaxHeight="1080" Background="#FFBBBBBB" Foreground="#FF0058CE" TextAlignment="Right" Height="1078" VerticalAlignment="Top" />
+            </StackPanel>
+        </ScrollViewer>
+        <TabControl Margin="421,0,0,167" HorizontalAlignment="Left" Width="1920">
+        </TabControl>
     </Grid>
 </Page>
