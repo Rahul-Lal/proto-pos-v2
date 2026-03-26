@@ -16,6 +16,7 @@
         </ScrollViewer>
         <TabControl Margin="421,0,0,167" HorizontalAlignment="Left" Width="1920">
             <TabItem x:Name="btnEuropeanBurger" Header="European Burger" Width="250" Height="100" FontSize="16" HorizontalAlignment="Left" Margin="-1,0,0,0">
+                
             </TabItem>
             <TabItem x:Name="btnChickenOther" Header="Chicken + Other" Width="250" Height="100" FontSize="16">
                 
@@ -33,5 +34,8 @@
                 
             </TabItem>
         </TabControl>
+
+        <Label Content="TOTAL: " HorizontalAlignment="Left" Margin="0,844,0,0" VerticalAlignment="Top" Height="69" Width="227" FontSize="36" FontWeight="Bold" Background="#FFBBBBBB" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="txtTotal" IsReadOnly="True" HorizontalAlignment="Left" Margin="227,844,0,0" TextWrapping="Wrap" Text="0.00" VerticalAlignment="Top" Width="196" Height="68" FontSize="36" TextAlignment="Center" Background="#FFBBBBBB" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
     </Grid>
 </Page>
