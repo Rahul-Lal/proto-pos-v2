@@ -42,7 +42,30 @@
                 </Grid>
             </TabItem>
             <TabItem x:Name="btnChickenOther" Header="Chicken + Other" Width="250" Height="100" FontSize="16">
+                <Grid Height="806" Margin="10,0,429,0" VerticalAlignment="Top">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="300*"/>
+                        <ColumnDefinition Width="300*"/>
+                        <ColumnDefinition Width="300*"/>
+                        <ColumnDefinition Width="300*"/>
+                        <ColumnDefinition Width="300*"/>
+                    </Grid.ColumnDefinitions>
 
+                    <Button x:Name="btnNashvilleHot" Content="Nashville Hot" Width="280" Height="320" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnNashvilleHot_Click"/>
+                    <Button x:Name="btnKyotoKatsu" Content="Kyoto Katsu" Width="280" Height="320" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnKyotoKatsu_Click" RenderTransformOrigin="-0.356,0.981" Grid.Column="1"/>
+                    <Button x:Name="btnMarrakesh" Content="Marrakesh" Width="280" Height="320" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnMarrakesh_Click" Grid.Column="2"/>
+                    <Button x:Name="btnBaja" Content="Baja" Width="280" Height="320" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnBaja_Click" RenderTransformOrigin="0.5,0.5" Grid.Column="3"/>
+                    <Button x:Name="btnSeoulFire" Content="Seoul Fire" Width="280" Height="320" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnSeoulFire_Click" Grid.Column="4"/>
+                    <Button x:Name="btnBangkokSatay" Content="Bangkok Satay" Height="320" FontSize="16" Margin="-3,43,0,0" VerticalAlignment="Top" Click="btnBangkokSatay_Click" HorizontalAlignment="Left" Width="280" Grid.Row="1" RenderTransformOrigin="0.167,0.55"/>
+                    <Button x:Name="btnOaxaca" Content="Oaxaca" Width="280" Height="320" FontSize="16" Margin="293,43,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnOaxaca_Click" Grid.Row="1" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnBombay" Content="Bombay" Width="280" Height="320" FontSize="16" Margin="292,43,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnBombay_Click" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnNordic" Content="Nordic" Width="280" Height="320" FontSize="16" Margin="293,43,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnNordic_Click" RenderTransformOrigin="0.582,0.52" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnHavana" Content="Havana" Width="280" Height="320" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnHavana_Click" Grid.Column="4" Grid.Row="1"/>
+                </Grid>
             </TabItem>
             <TabItem x:Name="btnSides" Header="Sides" Width="250" Height="100" FontSize="16">
 
