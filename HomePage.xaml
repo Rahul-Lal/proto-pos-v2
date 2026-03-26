@@ -37,5 +37,8 @@
 
         <Label Content="TOTAL: " HorizontalAlignment="Left" Margin="0,844,0,0" VerticalAlignment="Top" Height="69" Width="227" FontSize="36" FontWeight="Bold" Background="#FFBBBBBB" VerticalContentAlignment="Center"/>
         <TextBox x:Name="txtTotal" IsReadOnly="True" HorizontalAlignment="Left" Margin="227,844,0,0" TextWrapping="Wrap" Text="0.00" VerticalAlignment="Top" Width="196" Height="68" FontSize="36" TextAlignment="Center" Background="#FFBBBBBB" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="btnPayment" Click="btnPayment_Click" Content="Pay" HorizontalAlignment="Left" Margin="6,912,0,0" VerticalAlignment="Top" Height="168" Width="417" FontSize="24" />
+        <Button x:Name="btnClearOrder" Content="Clear Order" HorizontalAlignment="Left" Margin="421,912,0,0" VerticalAlignment="Top" Height="170" Width="250" Click="btnClearOrder_Click" FontSize="24"/>
+
     </Grid>
 </Page>
