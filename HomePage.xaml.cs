@@ -576,36 +576,36 @@ namespace proto_pos_v2
 
         private void multiChoiceComboDeal(string title, string burger1, string burger2, string side, string dessert, double price)
         {
-            string finalBurgerChoice = "";
+            //string finalBurgerChoice = "";
 
-            BurgerChoiceWindow burgerChoice = new BurgerChoiceWindow();
-            burgerChoice.btnOptionOne.Content = burger1;
-            burgerChoice.btnOptionTwo.Content = burger2;
-            burgerChoice.ShowDialog();
+            //BurgerChoiceWindow burgerChoice = new BurgerChoiceWindow();
+            //burgerChoice.btnOptionOne.Content = burger1;
+            //burgerChoice.btnOptionTwo.Content = burger2;
+            //burgerChoice.ShowDialog();
 
-            if (burgerChoice.isOptionOne == true)
-            {
-                finalBurgerChoice = burger1;
-                burgerChoice.isOptionOne = false;
-            }
-            else if (burgerChoice.isOptionTwo == true)
-            {
-                finalBurgerChoice = burger2;
-                burgerChoice.isOptionTwo = false;
-            }
-            else
-            {
-                finalBurgerChoice = burger1;
-            }
+            //if (burgerChoice.isOptionOne == true)
+            //{
+            //    finalBurgerChoice = burger1;
+            //    burgerChoice.isOptionOne = false;
+            //}
+            //else if (burgerChoice.isOptionTwo == true)
+            //{
+            //    finalBurgerChoice = burger2;
+            //    burgerChoice.isOptionTwo = false;
+            //}
+            //else
+            //{
+            //    finalBurgerChoice = burger1;
+            //}
 
-            txtOutput.Text += title + "\n";
-            txtOutput.Text += finalBurgerChoice + "\n";
-            txtOutput.Text += side + "\n";
-            txtOutput.Text += dessert + "\n";
-            txtOutput.Text += "Small Drink\n";
-            total += price;
+            //txtOutput.Text += title + "\n";
+            //txtOutput.Text += finalBurgerChoice + "\n";
+            //txtOutput.Text += side + "\n";
+            //txtOutput.Text += dessert + "\n";
+            //txtOutput.Text += "Small Drink\n";
+            //total += price;
 
-            txtPrices.Text += "$" + price.ToString() + "0\n\n\n\n\n";
+            //txtPrices.Text += "$" + price.ToString() + "0\n\n\n\n\n";
 
             Console.WriteLine("multiChoiceComboDeal: ");
             orderLinesViaConsole();
