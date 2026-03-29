@@ -687,15 +687,15 @@ namespace proto_pos_v2
 
         private void btnStaffMeal_Click(object sender, RoutedEventArgs e)
         {
-            if (isStaffMealSelected == false)
-            {
-                var staffMealWindow = new StaffMealWindow(this);
-                staffMealWindow.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("You have already selected a staff meal for this order.");
-            }
+            //if (isStaffMealSelected == false)
+            //{
+            //    var staffMealWindow = new StaffMealWindow(this);
+            //    staffMealWindow.ShowDialog();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("You have already selected a staff meal for this order.");
+            //}
         }
     }
 }
