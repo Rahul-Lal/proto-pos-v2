@@ -38,6 +38,34 @@ namespace proto_pos_v2
         int AddOnCount = 0;
         public double total = 0.00;
 
+        private void selectMenuItemFromDB(string menuitem)
+        {
+            string constring = "Server=(localdb)\\MSSQLLocalDB;Database=TestPOSDB;Trusted_Connection=true;TrustServerCertificate=true";
+
+            using (SqlConnection con = new SqlConnection(constring))
+            {
+                con.Open();
+
+                string query = $"SELECT Name, BasePrice FROM MenuItem WHERE Name = @name";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@name", menuitem);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string name = reader["Name"].ToString();
+                            string price = reader["BasePrice"].ToString();
+                            txtOutput.Text += name + "\n";
+                            txtPrices.Text += price + "\n";
+                        }
+                    }
+                }
+            }
+        }
+
         private void RefreshUI()
         {
             txtOutput.Text = string.Join("\n", orderLines);
@@ -102,35 +130,7 @@ namespace proto_pos_v2
 
         private void btnSingleOlympian_Click(object sender, RoutedEventArgs e)
         {
-            selectMenuItemFromDB();
-        }
-
-        private void selectMenuItemFromDB()
-        {
-            string constring = "Server=(localdb)\\MSSQLLocalDB;Database=TestPOSDB;Trusted_Connection=true;TrustServerCertificate=true";
-
-            using (SqlConnection con = new SqlConnection(constring))
-            {
-                con.Open();
-
-                string query = "SELECT Name, BasePrice FROM MenuItem WHERE Name = @name";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@name", "Single Olympian");
-
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            string name = reader["Name"].ToString();
-                            string price = reader["BasePrice"].ToString();
-                            txtOutput.Text += name + "\n";
-                            txtPrices.Text += price + "\n";
-                        }
-                    }
-                }
-            }
+            selectMenuItemFromDB("Single Olympian");
         }
 
         private void btnDoubleOlympian_Click(object sender, RoutedEventArgs e)
