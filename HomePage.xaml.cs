@@ -60,6 +60,8 @@ namespace proto_pos_v2
                             string price = reader["BasePrice"].ToString();
                             txtOutput.Text += name + "\n";
                             txtPrices.Text += price + "\n";
+                            total += double.Parse(price);
+                            totalAmount(total);
                         }
                     }
                 }
