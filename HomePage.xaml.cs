@@ -102,6 +102,11 @@ namespace proto_pos_v2
 
         private void btnSingleOlympian_Click(object sender, RoutedEventArgs e)
         {
+            selectMenuItemFromDB();
+        }
+
+        private void selectMenuItemFromDB()
+        {
             string constring = "Server=(localdb)\\MSSQLLocalDB;Database=TestPOSDB;Trusted_Connection=true;TrustServerCertificate=true";
 
             using (SqlConnection con = new SqlConnection(constring))
