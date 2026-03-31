@@ -108,7 +108,8 @@ namespace proto_pos_v2
             {
                 con.Open();
 
-                string query = "SELECT Name FROM MenuItem WHERE Name = @name";
+                string query = "SELECT Name, BasePrice FROM MenuItem WHERE Name = @name";
+
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@name", "Single Olympian");
@@ -118,7 +119,9 @@ namespace proto_pos_v2
                         if (reader.Read())
                         {
                             string name = reader["Name"].ToString();
+                            string price = reader["BasePrice"].ToString();
                             txtOutput.Text += name + "\n";
+                            txtPrices.Text += price + "\n";
                         }
                     }
                 }
