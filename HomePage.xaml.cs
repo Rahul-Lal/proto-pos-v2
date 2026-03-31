@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,6 +24,7 @@ namespace proto_pos_v2
         {
             InitializeComponent();
         }
+
         bool isDrinkSmall = false;
         bool isDrinkMedium = false;
         bool isDrinkLarge = false;
@@ -99,8 +102,27 @@ namespace proto_pos_v2
 
         private void btnSingleOlympian_Click(object sender, RoutedEventArgs e)
         {
-            // MakeComboWindow makeCombo = new MakeComboWindow();
-            comboOption("Single Olympian", 12.50);
+            string constring = "Server=(localdb)\\MSSQLLocalDB;Database=TestPOSDB;Trusted_Connection=true;TrustServerCertificate=true";
+
+            using (SqlConnection con = new SqlConnection(constring))
+            {
+                con.Open();
+
+                string query = "SELECT Name FROM MenuItem WHERE Name = @name";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@name", "Single Olympian");
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string name = reader["Name"].ToString();
+                            txtOutput.Text += name + "\n";
+                        }
+                    }
+                }
+            }
         }
 
         private void btnDoubleOlympian_Click(object sender, RoutedEventArgs e)
