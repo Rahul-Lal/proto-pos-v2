@@ -137,8 +137,7 @@ namespace proto_pos_v2
 
         private void btnDoubleOlympian_Click(object sender, RoutedEventArgs e)
         {
-            // MakeComboWindow makeCombo = new MakeComboWindow();
-            comboOption("Double Olympian", 14.50);
+            selectMenuItemFromDB("Double Olympian");
         }
 
         private void btnSingleParisian_Click(object sender, RoutedEventArgs e)
