@@ -167,8 +167,7 @@ namespace proto_pos_v2
 
         private void btnDoubleMatador_Click(object sender, RoutedEventArgs e)
         {
-            // MakeComboWindow makeCombo = new MakeComboWindow();
-            comboOption("Double Matador", 14.50);
+            selectMenuItemFromDB("Double Matador");
         }
 
         private void btnSingleKaiser_Click(object sender, RoutedEventArgs e)
