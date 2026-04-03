@@ -157,8 +157,7 @@ namespace proto_pos_v2
 
         private void btnDoubleRoma_Click(object sender, RoutedEventArgs e)
         {
-            // MakeComboWindow makeCombo = new MakeComboWindow();
-            comboOption("Double Roma", 14.50);
+            selectMenuItemFromDB("Double Roma");
         }
 
         private void btnSingleMatador_Click(object sender, RoutedEventArgs e)
