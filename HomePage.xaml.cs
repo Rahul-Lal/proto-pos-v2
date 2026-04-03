@@ -147,8 +147,7 @@ namespace proto_pos_v2
 
         private void btnDoubleParisian_Click(object sender, RoutedEventArgs e)
         {
-            // MakeComboWindow makeCombo = new MakeComboWindow();
-            comboOption("Double Parisian", 14.50);
+            selectMenuItemFromDB("Double Parisian");
         }
 
         private void btnSingleRoma_Click(object sender, RoutedEventArgs e)
