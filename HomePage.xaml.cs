@@ -177,8 +177,7 @@ namespace proto_pos_v2
 
         private void btnDoubleKaiser_Click(object sender, RoutedEventArgs e)
         {
-            // MakeComboWindow makeCombo = new MakeComboWindow();
-            comboOption("Double Kaiser", 14.50);
+            selectMenuItemFromDB("Double Kaiser");
         }
 
         private void btnNashvilleHot_Click(object sender, RoutedEventArgs e)
