@@ -405,10 +405,10 @@ namespace proto_pos_v2
 
         private void comboOption(string burger, double price)
         {
-            //string chosenCombo;
+            string chosenCombo;
 
-            //// // MakeComboWindow makeCombo = new MakeComboWindow();
-            //makeCombo.ShowDialog();
+            MakeComboWindow makeCombo = new MakeComboWindow();
+            makeCombo.ShowDialog();
 
             //if (makeCombo.makeLarge == true)
             //{
