@@ -137,107 +137,104 @@ namespace proto_pos_v2
 
         private void btnDoubleOlympian_Click(object sender, RoutedEventArgs e)
         {
-            selectMenuItemFromDB("Double Olympian");
+            comboOption("Double Olympian");
         }
 
         private void btnSingleParisian_Click(object sender, RoutedEventArgs e)
         {
-            selectMenuItemFromDB("Single Parisian");
+            comboOption("Single Parisian");
         }
 
         private void btnDoubleParisian_Click(object sender, RoutedEventArgs e)
         {
-            selectMenuItemFromDB("Double Parisian");
+            comboOption("Double Parisian");
         }
 
         private void btnSingleRoma_Click(object sender, RoutedEventArgs e)
         {
-            selectMenuItemFromDB("Single Roma");
+            comboOption("Single Roma");
         }
 
         private void btnDoubleRoma_Click(object sender, RoutedEventArgs e)
         {
-            selectMenuItemFromDB("Double Roma");
+            comboOption("Double Roma");
         }
 
         private void btnSingleMatador_Click(object sender, RoutedEventArgs e)
         {
-            selectMenuItemFromDB("Single Matador");
+            comboOption("Single Matador");
         }
 
         private void btnDoubleMatador_Click(object sender, RoutedEventArgs e)
         {
-            selectMenuItemFromDB("Double Matador");
+            comboOption("Double Matador");
         }
 
         private void btnSingleKaiser_Click(object sender, RoutedEventArgs e)
         {
-            selectMenuItemFromDB("Single Kaiser");
+            comboOption("Single Kaiser");
         }
 
         private void btnDoubleKaiser_Click(object sender, RoutedEventArgs e)
         {
-            selectMenuItemFromDB("Double Kaiser");
+            comboOption("Double Kaiser");
         }
 
         private void btnNashvilleHot_Click(object sender, RoutedEventArgs e)
         {
-            // MakeComboWindow makeCombo = new MakeComboWindow();
-            selectMenuItemFromDB("Nashville Hot");
+            comboOption("Nashville Hot Chicken");
         }
 
         private void btnKyotoKatsu_Click(object sender, RoutedEventArgs e)
         {
-            // MakeComboWindow makeCombo = new MakeComboWindow();
-            selectMenuItemFromDB("Kyoto Katsu");
+            comboOption("Kyoto Katsu Chicken");
         }
 
         private void btnMarrakesh_Click(object sender, RoutedEventArgs e)
         {
             // MakeComboWindow makeCombo = new MakeComboWindow();
-            selectMenuItemFromDB("Marrakesh Chicken");
+            comboOption("Marrakesh Chicken");
         }
 
         private void btnBaja_Click(object sender, RoutedEventArgs e)
         {
             // MakeComboWindow makeCombo = new MakeComboWindow();
-            selectMenuItemFromDB("Baja Chicken");
+            comboOption("Baja Chicken");
         }
 
         private void btnSeoulFire_Click(object sender, RoutedEventArgs e)
         {
             // MakeComboWindow makeCombo = new MakeComboWindow();
-            selectMenuItemFromDB("Seoul Fire");
+            comboOption("Seoul Fire Chicken");
         }
 
         private void btnBangkokSatay_Click(object sender, RoutedEventArgs e)
         {
-            // MakeComboWindow makeCombo = new MakeComboWindow();
-            selectMenuItemFromDB("Bangkok Satay Chicken");
+            comboOption("Bangkok Satay Chicken");
         }
 
         private void btnOaxaca_Click(object sender, RoutedEventArgs e)
         {
             // MakeComboWindow makeCombo = new MakeComboWindow();
-            selectMenuItemFromDB("Oaxaca Veggie");
+            comboOption("Oaxaca Veggie");
         }
 
         private void btnBombay_Click(object sender, RoutedEventArgs e)
         {
             // MakeComboWindow makeCombo = new MakeComboWindow();
-            selectMenuItemFromDB("Bombay Veggie");
+            comboOption("Bombay Veggie");
         }
 
         private void btnNordic_Click(object sender, RoutedEventArgs e)
         {
             // // MakeComboWindow makeCombo = new MakeComboWindow();
-            selectMenuItemFromDB("Nordic Salmon");
+            comboOption("Nordic Salmon");
         }
 
         private void btnHavana_Click(object sender, RoutedEventArgs e)
         {
             // MakeComboWindow makeCombo = new MakeComboWindow();
-            selectMenuItemFromDB("Havana Fish");
+            comboOption("Havana Fish");
         }
 
         private void btnSmallFries_Click(object sender, RoutedEventArgs e)
