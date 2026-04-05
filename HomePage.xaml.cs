@@ -242,107 +242,107 @@ namespace proto_pos_v2
 
         private void btnSmallFries_Click(object sender, RoutedEventArgs e)
         {
-            printMenuItem("Small Fries", 3.0);
+            selectMenuItemFromDB("Small Fries");
         }
 
         private void btnMediumFries_Click(object sender, RoutedEventArgs e)
         {
-            printMenuItem("Medium Fries", 4.5);
+            selectMenuItemFromDB("Medium Fries");
         }
 
         private void btnLargeFries_Click(object sender, RoutedEventArgs e)
         {
-            printMenuItem("Large Fries", 5.0);
+            selectMenuItemFromDB("Large Fries");
         }
 
         private void btnGarlicBread_Click(object sender, RoutedEventArgs e)
         {
-            printMenuItem("Garlic Bread", 4.5);
+            selectMenuItemFromDB("Garlic Bread");
         }
 
         private void btnMozzarellaStick_Click(object sender, RoutedEventArgs e)
         {
-            printMenuItem("Mozzarella Sticks", 5.0);
+            selectMenuItemFromDB("Mozzarella Sticks");
         }
 
         private void btnSpringRoll_Click(object sender, RoutedEventArgs e)
         {
-            printMenuItem("Spring Rolls", 5.0);
+            selectMenuItemFromDB("Spring Rolls");
         }
 
         private void btnLoadedNachos_Click(object sender, RoutedEventArgs e)
         {
-            printMenuItem("Loaded Nachos", 6.5);
+            selectMenuItemFromDB("Loaded Nachos");
         }
 
         private void btnPoutine_Click(object sender, RoutedEventArgs e)
         {
-            printMenuItem("Poutine", 6.5);
+            selectMenuItemFromDB("Poutine");
         }
 
         private void btnApplePie_Click(object sender, RoutedEventArgs e)
         {
-            printMenuItem("Apple Pie", 4.5);
+            selectMenuItemFromDB("Apple Pie");
         }
 
         private void btnChurros_Click(object sender, RoutedEventArgs e)
         {
-            printMenuItem("Churros", 4.5);
+            selectMenuItemFromDB("Churros");
         }
 
         private void btnTiramisuCup_Click(object sender, RoutedEventArgs e)
         {
-            printMenuItem("Tiramisu Cup", 5.0);
+            selectMenuItemFromDB("Tiramisu Cup");
         }
 
         private void btnMochiIceCream_Click(object sender, RoutedEventArgs e)
         {
-            printMenuItem("Mochi Ice Cream", 5.0);
+            selectMenuItemFromDB("Mochi Ice Cream");
         }
 
         private void btnCremeBrulee_Click(object sender, RoutedEventArgs e)
         {
-            printMenuItem("Creme Brulee", 6.5);
+            selectMenuItemFromDB("Creme Brulee");
         }
 
         private void btnBaklavaBites_Click(object sender, RoutedEventArgs e)
         {
-            printMenuItem("Baklava Bites", 6.5);
+            selectMenuItemFromDB("Baklava Bites");
         }
 
         private void btnMatchaGreenTeaShake_Click(object sender, RoutedEventArgs e)
         {
-            printMenuItem("Matcha Green Tea Shake", 6.0);
+            selectMenuItemFromDB("Matcha Green Tea Shake");
         }
 
         private void btnChurroCinnamonShake_Click(object sender, RoutedEventArgs e)
         {
-            printMenuItem("Churro Cinnamon Shake", 6.0);
+            selectMenuItemFromDB("Churro Cinnamon Shake");
         }
 
         private void btnMangoLassiShake_Click(object sender, RoutedEventArgs e)
         {
-            printMenuItem("Mango Lassi Shake", 6.0);
+            selectMenuItemFromDB("Mango Lassi Shake");
         }
 
         private void btnDulceDeLecheShake_Click(object sender, RoutedEventArgs e)
         {
-            printMenuItem("Dulce De Leche Shake", 6.0);
+            selectMenuItemFromDB("Dulce De Leche Shake");
         }
 
         private void btnDubaiChocolateShake_Click(object sender, RoutedEventArgs e)
         {
-            printMenuItem("Dubai Chocolate Shake", 6.0);
+            selectMenuItemFromDB("Dubai Chocolate Shake");
         }
 
         private void btnPandanCoconutShake_Click(object sender, RoutedEventArgs e)
         {
-            printMenuItem("Pandan Coconut Shake", 6.0);
+            selectMenuItemFromDB("Pandan Coconut Shake");
         }
 
         private void btnTiramisuShake_Click(object sender, RoutedEventArgs e)
         {
-            printMenuItem("Tiramisu Shake", 6.0);
+            selectMenuItemFromDB("Tiramisu Shake");
         }
 
         private void btnCoke_Click(object sender, RoutedEventArgs e)
@@ -403,88 +403,61 @@ namespace proto_pos_v2
 
         }
 
-        private void comboOption(string burger, double price)
+        private void comboOption()
         {
             string chosenCombo;
 
             MakeComboWindow makeCombo = new MakeComboWindow();
             makeCombo.ShowDialog();
 
-            //if (makeCombo.makeLarge == true)
-            //{
-            //    chosenCombo = burger.ToUpper() + " LARGE COMBO\n" +
-            //        burger + " Burger \n" +
-            //        "Large Fries \n" +
-            //        "Large Drink \n";
+            if (makeCombo.makeLarge == true)
+            {
+                chosenCombo = burger.ToUpper() + " LARGE COMBO\n" +
+                    burger + " Burger \n" +
+                    "Large Fries \n" +
+                    "Large Drink \n";
 
-            //    txtOutput.Text += chosenCombo;
-            //    orderLines.Add(chosenCombo);
+                txtOutput.Text += chosenCombo;
+                orderLines.Add(chosenCombo);
 
-            //    txtPrices.Text += "$" + (price + 7.5).ToString() + ".00\n\n\n\n";
-            //    total += price + 7.5;
-            //    prices.Add(price + 7.5);
-            //    totalAmount(total);
+                txtPrices.Text += "$" + (price + 7.5).ToString() + ".00\n\n\n\n";
+                total += price + 7.5;
+                prices.Add(price + 7.5);
+                totalAmount(total);
 
-            //    makeCombo.makeLarge = false;
-            //    makeCombo.Close();
-            //}
-            //else if (makeCombo.makeMedium == true)
-            //{
-            //    chosenCombo = burger.ToUpper() + " MEDIUM COMBO\n" +
-            //        burger + " Burger \n" +
-            //        "Medium Fries \n" +
-            //        "Medium Drink \n";
+                makeCombo.makeLarge = false;
+                makeCombo.Close();
+            }
+            else if (makeCombo.makeMedium == true)
+            {
+                chosenCombo = burger.ToUpper() + " MEDIUM COMBO\n" +
+                    burger + " Burger \n" +
+                    "Medium Fries \n" +
+                    "Medium Drink \n";
 
-            //    txtOutput.Text += chosenCombo;
-            //    orderLines.Add(chosenCombo);
+                txtOutput.Text += chosenCombo;
+                orderLines.Add(chosenCombo);
 
-            //    txtPrices.Text += "$" + (price + 5).ToString() + "0\n\n\n\n";
-            //    total += price + 5;
-            //    prices.Add(price + 5);
-            //    totalAmount(total);
+                txtPrices.Text += "$" + (price + 5).ToString() + "0\n\n\n\n";
+                total += price + 5;
+                prices.Add(price + 5);
+                totalAmount(total);
 
-            //    makeCombo.makeMedium = false;
-            //    makeCombo.Close();
-            //}
-            //else if (makeCombo.makeJustBurger == true)
-            //{
-            //    chosenCombo = burger + " Burger \n";
-            //    txtOutput.Text += chosenCombo;
-            //    orderLines.Add(chosenCombo);
-
-            //    txtPrices.Text += "$" + price + "0\n";
-            //    total += price;
-            //    prices.Add(price);
-            //    totalAmount(total);
-
-            //    makeCombo.makeJustBurger = false;
-            //    makeCombo.Close();
-            //}
-            //else
-            //{
-            //    makeCombo.Close();
-            //}
-            //Console.WriteLine("Combo:");
-            //orderLinesViaConsole();
-        }
-
-        private void printMenuItem(string menuItem, double price)
-        {
-            txtOutput.Text += menuItem + "\n";
-            orderLines.Add(menuItem);
-            prices.Add(price); // <- ensure parallel list kept in sync
-            Console.WriteLine(orderLines);
-
-            if (price % 1 != 0)
-                txtPrices.Text += "$" + price.ToString() + "0\n";
+                makeCombo.makeMedium = false;
+                makeCombo.Close();
+            }
+            else if (makeCombo.makeJustBurger == true)
+            {
+                selectMenuItemFromDB(burger);
+            }
             else
-                txtPrices.Text += "$" + price.ToString() + ".00\n";
-
-            total += price;
-            totalAmount(total);
-            Console.WriteLine("printMenuItem:");
+            {
+                makeCombo.Close();
+            }
+            Console.WriteLine("Combo:");
             orderLinesViaConsole();
         }
+
 
         private void btnMediumDrink_Click(object sender, RoutedEventArgs e)
         {
@@ -654,7 +627,7 @@ namespace proto_pos_v2
             }
             else
             {
-                printMenuItem(menuItem, 3.00);
+                // selectMenuItemFromDB(menuItem, 3.00);
                 AddOnCount++;
             }
             orderLinesViaConsole();
