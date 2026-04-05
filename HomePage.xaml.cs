@@ -182,12 +182,12 @@ namespace proto_pos_v2
 
         private void btnNashvilleHot_Click(object sender, RoutedEventArgs e)
         {
-            comboOption("Nashville Hot Chicken");
+            comboOption("Nashville Hot");
         }
 
         private void btnKyotoKatsu_Click(object sender, RoutedEventArgs e)
         {
-            comboOption("Kyoto Katsu Chicken");
+            comboOption("Kyoto Katsu");
         }
 
         private void btnMarrakesh_Click(object sender, RoutedEventArgs e)
@@ -210,7 +210,7 @@ namespace proto_pos_v2
 
         private void btnBangkokSatay_Click(object sender, RoutedEventArgs e)
         {
-            comboOption("Bangkok Satay Chicken");
+            comboOption("Bangkok Satay");
         }
 
         private void btnOaxaca_Click(object sender, RoutedEventArgs e)
