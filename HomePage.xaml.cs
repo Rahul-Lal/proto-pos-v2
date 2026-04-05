@@ -59,7 +59,7 @@ namespace proto_pos_v2
                             string name = reader["Name"].ToString();
                             string price = reader["BasePrice"].ToString();
                             txtOutput.Text += name + "\n";
-                            txtPrices.Text += price + "\n";
+                            txtPrices.Text += double.Parse(price) + "0\n";
                             total += double.Parse(price);
                             totalAmount(total);
                         }
@@ -132,7 +132,7 @@ namespace proto_pos_v2
 
         private void btnSingleOlympian_Click(object sender, RoutedEventArgs e)
         {
-            selectMenuItemFromDB("Single Olympian");
+            comboOption("Single Olympian");
         }
 
         private void btnDoubleOlympian_Click(object sender, RoutedEventArgs e)
@@ -410,49 +410,71 @@ namespace proto_pos_v2
             MakeComboWindow makeCombo = new MakeComboWindow();
             makeCombo.ShowDialog();
 
-            if (makeCombo.makeLarge == true)
+            string constring = "Server=(localdb)\\MSSQLLocalDB;Database=TestPOSDB;Trusted_Connection=true;TrustServerCertificate=true";
+
+            using (SqlConnection con = new SqlConnection(constring))
             {
-                chosenCombo = burger.ToUpper() + " LARGE COMBO\n" +
-                    burger + " Burger \n" +
-                    "Large Fries \n" +
-                    "Large Drink \n";
+                con.Open();
 
-                txtOutput.Text += chosenCombo;
-                orderLines.Add(chosenCombo);
+                string query = $"SELECT Name, BasePrice FROM MenuItem WHERE Name = @name";
 
-                txtPrices.Text += "$" + (price + 7.5).ToString() + ".00\n\n\n\n";
-                total += price + 7.5;
-                prices.Add(price + 7.5);
-                totalAmount(total);
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@name", burger);
 
-                makeCombo.makeLarge = false;
-                makeCombo.Close();
-            }
-            else if (makeCombo.makeMedium == true)
-            {
-                chosenCombo = burger.ToUpper() + " MEDIUM COMBO\n" +
-                    burger + " Burger \n" +
-                    "Medium Fries \n" +
-                    "Medium Drink \n";
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string price = reader["BasePrice"].ToString();
 
-                txtOutput.Text += chosenCombo;
-                orderLines.Add(chosenCombo);
+                            if (makeCombo.makeLarge == true)
+                            {
+                                chosenCombo = burger.ToUpper() + " LARGE COMBO\n" +
+                                    burger + " Burger \n" +
+                                    "Large Fries \n" +
+                                    "Large Drink \n";
 
-                txtPrices.Text += "$" + (price + 5).ToString() + "0\n\n\n\n";
-                total += price + 5;
-                prices.Add(price + 5);
-                totalAmount(total);
+                                txtOutput.Text += chosenCombo;
+                                orderLines.Add(chosenCombo);
 
-                makeCombo.makeMedium = false;
-                makeCombo.Close();
-            }
-            else if (makeCombo.makeJustBurger == true)
-            {
-                selectMenuItemFromDB(burger);
-            }
-            else
-            {
-                makeCombo.Close();
+                                txtPrices.Text += "$" + (double.Parse(price) + 7.5).ToString() + ".00\n\n\n\n";
+                                total += double.Parse(price) + 7.5;
+                                // prices.Add(price + 7.5);
+                                totalAmount(total);
+
+                                makeCombo.makeLarge = false;
+                                makeCombo.Close();
+                            }
+                            else if (makeCombo.makeMedium == true)
+                            {
+                                chosenCombo = burger.ToUpper() + " MEDIUM COMBO\n" +
+                                    burger + " Burger \n" +
+                                    "Medium Fries \n" +
+                                    "Medium Drink \n";
+
+                                txtOutput.Text += chosenCombo;
+                                orderLines.Add(chosenCombo);
+
+                                txtPrices.Text += "$" + (double.Parse(price) + 5).ToString() + "0\n\n\n\n";
+                                total += double.Parse(price) + 5;
+                                // prices.Add(price + 5);
+                                totalAmount(total);
+
+                                makeCombo.makeMedium = false;
+                                makeCombo.Close();
+                            }
+                            else if (makeCombo.makeJustBurger == true)
+                            {
+                                selectMenuItemFromDB(burger);
+                            }
+                            else
+                            {
+                                makeCombo.Close();
+                            }
+                        }
+                    }
+                }
             }
             Console.WriteLine("Combo:");
             orderLinesViaConsole();
