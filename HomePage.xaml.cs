@@ -192,19 +192,19 @@ namespace proto_pos_v2
 
         private void btnMarrakesh_Click(object sender, RoutedEventArgs e)
         {
-            // MakeComboWindow makeCombo = new MakeComboWindow();
+
             comboOption("Marrakesh Chicken");
         }
 
         private void btnBaja_Click(object sender, RoutedEventArgs e)
         {
-            // MakeComboWindow makeCombo = new MakeComboWindow();
+
             comboOption("Baja Chicken");
         }
 
         private void btnSeoulFire_Click(object sender, RoutedEventArgs e)
         {
-            // MakeComboWindow makeCombo = new MakeComboWindow();
+
             comboOption("Seoul Fire Chicken");
         }
 
@@ -215,25 +215,24 @@ namespace proto_pos_v2
 
         private void btnOaxaca_Click(object sender, RoutedEventArgs e)
         {
-            // MakeComboWindow makeCombo = new MakeComboWindow();
+
             comboOption("Oaxaca Veggie");
         }
 
         private void btnBombay_Click(object sender, RoutedEventArgs e)
         {
-            // MakeComboWindow makeCombo = new MakeComboWindow();
+
             comboOption("Bombay Veggie");
         }
 
         private void btnNordic_Click(object sender, RoutedEventArgs e)
         {
-            // // MakeComboWindow makeCombo = new MakeComboWindow();
             comboOption("Nordic Salmon");
         }
 
         private void btnHavana_Click(object sender, RoutedEventArgs e)
         {
-            // MakeComboWindow makeCombo = new MakeComboWindow();
+
             comboOption("Havana Fish");
         }
 
