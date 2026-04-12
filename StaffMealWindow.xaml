@@ -21,51 +21,25 @@
             <ColumnDefinition Width="300*"/>
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="btnSingleOlympian" Content="Single Olympian" Click="btnSingleOlympian_Click" Width="160" Height="230" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" FontFamily="Bahnschrift" BorderBrush="#FFCCCCCC" Foreground="#1f1f1f" FontWeight="Bold" Background="{x:Null}" />
+        <Button x:Name="btnSingleOlympian" Content="Single Olympian" Click="btnSingleOlympian_Click" Width="160" Height="230" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" FontFamily="Bahnschrift" BorderBrush="#FFCCCCCC" Foreground="#1f1f1f" FontWeight="Bold">
+        </Button>
         <Button x:Name="btnSingleParisan" Content="Single Parisan" Click="btnSingleParisan_Click" Width="160" Height="230" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" FontFamily="Bahnschrift" BorderBrush="#FFCCCCCC" Foreground="#1f1f1f" FontWeight="Bold" >
-            <Button.Background>
-                <ImageBrush ImageSource="/media/EuropeanBurger/Parisan Burger.png" Opacity="0.75" Stretch="Fill" />
-            </Button.Background>
         </Button>
         <Button x:Name="btnSingleRoma" Content="Single Roma" Click="btnSingleRoma_Click" Width="160" Height="230" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" FontFamily="Bahnschrift" BorderBrush="#FFCCCCCC" Foreground="#1f1f1f" FontWeight="Bold" >
-            <Button.Background>
-                <ImageBrush ImageSource="/media/EuropeanBurger/Roma Burger.png" Opacity="0.75" Stretch="Fill" />
-            </Button.Background>
         </Button>
         <Button x:Name="btnNashvilleHot" Content="Nashville Hot" Click="btnNashvilleHot_Click" Width="160" Height="230" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Grid.Row="1" FontFamily="Bahnschrift" BorderBrush="#FFCCCCCC" Foreground="#1f1f1f" FontWeight="Bold" >
-            <Button.Background>
-                <ImageBrush ImageSource="/media/ChickenOthers/Nashville Hot.png" Opacity="0.75" Stretch="Fill" />
-            </Button.Background>
         </Button>
         <Button x:Name="btnKyotoKatsu" Content="Kyoto Katsu" Click="btnKyotoKatsu_Click" Width="160" Height="230" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4" RenderTransformOrigin="0.752,1.213" Grid.Row="1" FontFamily="Bahnschrift" BorderBrush="#FFCCCCCC" Foreground="#1f1f1f" FontWeight="Bold" >
-            <Button.Background>
-                <ImageBrush ImageSource="/media/ChickenOthers/Kyoto Katsu.png" Opacity="0.75" Stretch="Fill" />
-            </Button.Background>
         </Button>
         <Button x:Name="btnMarrakesh" Content="Marrakesh" Click="btnMarrakesh_Click" Width="160" Height="230" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Margin="0,10,0,0" FontFamily="Bahnschrift" BorderBrush="#FFCCCCCC" Foreground="#1f1f1f" FontWeight="Bold" >
-            <Button.Background>
-                <ImageBrush ImageSource="/media/ChickenOthers/Marrakesh.png" Opacity="0.75" Stretch="Fill" />
-            </Button.Background>
         </Button>
         <Button x:Name="btnOaxaca" Content="Oaxaca" Click="btnOaxaca_Click" Width="160" Height="230" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Margin="0,10,0,0" Grid.Column="1" FontFamily="Bahnschrift" BorderBrush="#FFCCCCCC" Foreground="#1f1f1f" FontWeight="Bold" >
-            <Button.Background>
-                <ImageBrush ImageSource="/media/ChickenOthers/Oaxaca.png" Opacity="0.75" Stretch="Fill" />
-            </Button.Background>
         </Button>
         <Button x:Name="btnBombay" Content="Bombay" Click="btnBombay_Click" Width="160" Height="230" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Margin="0,8,0,0" Grid.Column="2" FontFamily="Bahnschrift" BorderBrush="#FFCCCCCC" Foreground="#1f1f1f" FontWeight="Bold" >
-            <Button.Background>
-                <ImageBrush ImageSource="/media/ChickenOthers/Bombay.png" Opacity="0.75" Stretch="Fill"/>
-            </Button.Background>
         </Button>
         <Button x:Name="btnNordic" Content="Nordic" Click="btnNordic_Click" Width="160" Height="230" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Margin="0,10,0,0" Grid.Column="3" FontFamily="Bahnschrift" BorderBrush="#FFCCCCCC" Foreground="#1f1f1f" FontWeight="Bold" >
-            <Button.Background>
-                <ImageBrush ImageSource="/media/ChickenOthers/Nordic.png" Opacity="0.75" Stretch="Fill"/>
-            </Button.Background>
         </Button>
         <Button x:Name="btnHavana" Content="Havana" Click="btnHavana_Click" Width="160" Height="230" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Margin="0,10,0,0" Grid.Column="4" FontFamily="Bahnschrift" BorderBrush="#FFCCCCCC" Foreground="#1f1f1f" FontWeight="Bold" >
-            <Button.Background>
-                <ImageBrush ImageSource="/media/ChickenOthers/Havana.png" Opacity="0.75" Stretch="Fill"/>
-            </Button.Background>
         </Button>
         <Label x:Name="lblInstruction" Content="Select a burger for your staff meal" HorizontalAlignment="Left" VerticalAlignment="Center" Height="77" Width="880" FontSize="48" Background="Transparent" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="5" Margin="20,0,0,0"/>
 
