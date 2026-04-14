@@ -59,7 +59,7 @@ namespace proto_pos_v2
                             string name = reader["Name"].ToString();
                             string price = reader["BasePrice"].ToString();
                             txtOutput.Text += name + "\n";
-                            txtPrices.Text += double.Parse(price) + "0\n";
+                            txtPrices.Text += $"${double.Parse(price):0.00}\n";
                             total += double.Parse(price);
                             totalAmount(total);
                         }
@@ -128,6 +128,158 @@ namespace proto_pos_v2
             {
                 MessageBox.Show("Please Select a size first.");
             }
+        }
+
+        public void ClearOutput()
+        {
+            txtOutput.Text = "";
+            txtPrices.Text = "";
+            total = 0.0;
+            totalAmount(total);
+            AddOnCount = 0;
+            isDiscountedTenPercent = false;
+            isStaffMealSelected = false;
+            Console.WriteLine($"---------- TXTOUTPUT CLEARED ----------");
+        }
+
+        private void totalAmount(double amount)
+        {
+            txtTotal.Text = total.ToString("C");
+
+        }
+
+        private void comboOption(string burger)
+        {
+            string chosenCombo;
+
+            MakeComboWindow makeCombo = new MakeComboWindow();
+            makeCombo.ShowDialog();
+
+            string constring = "Server=(localdb)\\MSSQLLocalDB;Database=TestPOSDB;Trusted_Connection=true;TrustServerCertificate=true";
+
+            using (SqlConnection con = new SqlConnection(constring))
+            {
+                con.Open();
+
+                string query = $"SELECT Name, BasePrice FROM MenuItem WHERE Name = @name";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@name", burger);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string price = reader["BasePrice"].ToString();
+
+                            if (makeCombo.makeLarge == true)
+                            {
+                                chosenCombo = burger.ToUpper() + " LARGE COMBO\n" +
+                                    burger + " Burger \n" +
+                                    "Large Fries \n" +
+                                    "Large Drink \n";
+
+                                txtOutput.Text += chosenCombo;
+                                orderLines.Add(chosenCombo);
+
+                                txtPrices.Text += "$" + (double.Parse(price) + 7.5).ToString() + ".00\n\n\n\n";
+                                total += double.Parse(price) + 7.5;
+                                // prices.Add(price + 7.5);
+                                totalAmount(total);
+
+                                makeCombo.makeLarge = false;
+                                makeCombo.Close();
+                            }
+                            else if (makeCombo.makeMedium == true)
+                            {
+                                chosenCombo = burger.ToUpper() + " MEDIUM COMBO\n" +
+                                    burger + " Burger \n" +
+                                    "Medium Fries \n" +
+                                    "Medium Drink \n";
+
+                                txtOutput.Text += chosenCombo;
+                                orderLines.Add(chosenCombo);
+
+                                txtPrices.Text += "$" + (double.Parse(price) + 5).ToString() + "0\n\n\n\n";
+                                total += double.Parse(price) + 5;
+                                // prices.Add(price + 5);
+                                totalAmount(total);
+
+                                makeCombo.makeMedium = false;
+                                makeCombo.Close();
+                            }
+                            else if (makeCombo.makeJustBurger == true)
+                            {
+                                selectMenuItemFromDB(burger);
+                            }
+                            else
+                            {
+                                makeCombo.Close();
+                            }
+                        }
+                    }
+                }
+            }
+            Console.WriteLine("Combo:");
+            orderLinesViaConsole();
+        }
+
+        private void comboCounter(string menuItem)
+        {
+            string sourceText = txtOutput.Text;
+            string wordToCount = "COMBO";
+
+            int comboCount = sourceText.Split(new string[] { wordToCount }, StringSplitOptions.None).Length - 1;
+
+            if (AddOnCount == comboCount || comboCount == 0)
+            {
+                MessageBox.Show("You have added the maximum amount of add-ons for your combos.");
+            }
+            else
+            {
+                // selectMenuItemFromDB(menuItem, 3.00);
+                AddOnCount++;
+            }
+            orderLinesViaConsole();
+        }
+
+        private void discount(double percentage)
+        {
+            if (isDiscountedTenPercent == true)
+            {
+                MessageBox.Show("You have already applied a 10% discount to this order.");
+                return;
+            }
+            else
+            {
+                double percent = percentage / 100;
+                double discountedAmount = total * percent;
+                double discountedTotal = total - discountedAmount;
+
+                txtOutput.Text = $"{percentage}% discount Applied.\n\n" + txtOutput.Text;
+                txtPrices.Text = "\n\n" + txtPrices.Text;
+
+                total = discountedTotal;
+                txtTotal.Text = discountedTotal.ToString("C");
+
+                isDiscountedTenPercent = true;
+            }
+        }
+
+        private void comboDeal(string title, string burger, string side, string dessert, double price)
+        {
+            txtOutput.Text += title + "\n";
+            txtOutput.Text += burger + "\n";
+            txtOutput.Text += side + "\n";
+            txtOutput.Text += dessert + "\n";
+            txtOutput.Text += "Small Drink\n";
+            total += price;
+
+            txtPrices.Text += "$" + price.ToString() + "0\n\n\n\n\n";
+            totalAmount(total);
+            Console.WriteLine("comboDeal:");
+            orderLinesViaConsole();
         }
 
         private void btnSingleOlympian_Click(object sender, RoutedEventArgs e)
@@ -381,117 +533,6 @@ namespace proto_pos_v2
             ClearOutput();
         }
 
-        public void ClearOutput()
-        {
-            txtOutput.Text = "";
-            txtPrices.Text = "";
-            total = 0.0;
-            totalAmount(total);
-            AddOnCount = 0;
-            isDiscountedTenPercent = false;
-            isStaffMealSelected = false;
-            Console.WriteLine($"---------- TXTOUTPUT CLEARED ----------");
-        }
-
-        private void totalAmount(double amount)
-        {
-            txtTotal.Text = total.ToString("C");
-
-        }
-
-        private void comboOption(string burger)
-        {
-            string chosenCombo;
-
-            MakeComboWindow makeCombo = new MakeComboWindow();
-            makeCombo.ShowDialog();
-
-            string constring = "Server=(localdb)\\MSSQLLocalDB;Database=TestPOSDB;Trusted_Connection=true;TrustServerCertificate=true";
-
-            using (SqlConnection con = new SqlConnection(constring))
-            {
-                con.Open();
-
-                string query = $"SELECT Name, BasePrice FROM MenuItem WHERE Name = @name";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@name", burger);
-
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            string price = reader["BasePrice"].ToString();
-
-                            if (makeCombo.makeLarge == true)
-                            {
-                                chosenCombo = burger.ToUpper() + " LARGE COMBO\n" +
-                                    burger + " Burger \n" +
-                                    "Large Fries \n" +
-                                    "Large Drink \n";
-
-                                txtOutput.Text += chosenCombo;
-                                orderLines.Add(chosenCombo);
-
-                                txtPrices.Text += "$" + (double.Parse(price) + 7.5).ToString() + ".00\n\n\n\n";
-                                total += double.Parse(price) + 7.5;
-                                // prices.Add(price + 7.5);
-                                totalAmount(total);
-
-                                makeCombo.makeLarge = false;
-                                makeCombo.Close();
-                            }
-                            else if (makeCombo.makeMedium == true)
-                            {
-                                chosenCombo = burger.ToUpper() + " MEDIUM COMBO\n" +
-                                    burger + " Burger \n" +
-                                    "Medium Fries \n" +
-                                    "Medium Drink \n";
-
-                                txtOutput.Text += chosenCombo;
-                                orderLines.Add(chosenCombo);
-
-                                txtPrices.Text += "$" + (double.Parse(price) + 5).ToString() + "0\n\n\n\n";
-                                total += double.Parse(price) + 5;
-                                // prices.Add(price + 5);
-                                totalAmount(total);
-
-                                makeCombo.makeMedium = false;
-                                makeCombo.Close();
-                            }
-                            else if (makeCombo.makeJustBurger == true)
-                            {
-                                selectMenuItemFromDB(burger);
-                            }
-                            else
-                            {
-                                makeCombo.Close();
-                            }
-                        }
-                    }
-                }
-            }
-            Console.WriteLine("Combo:");
-            orderLinesViaConsole();
-        }
-
-
-        private void btnMediumDrink_Click(object sender, RoutedEventArgs e)
-        {
-            isDrinkMedium = true;
-        }
-
-        private void btnSmallDrink_Click(object sender, RoutedEventArgs e)
-        {
-            isDrinkSmall = true;
-        }
-
-        private void btnLargeDrink_Click(object sender, RoutedEventArgs e)
-        {
-            isDrinkLarge = true;
-        }
-
         private void setDrinkSize()
         {
             if (isDrinkSmall)
@@ -518,6 +559,21 @@ namespace proto_pos_v2
                 totalAmount(total);
                 isDrinkLarge = false;
             }
+        }
+
+        private void btnMediumDrink_Click(object sender, RoutedEventArgs e)
+        {
+            isDrinkMedium = true;
+        }
+
+        private void btnSmallDrink_Click(object sender, RoutedEventArgs e)
+        {
+            isDrinkSmall = true;
+        }
+
+        private void btnLargeDrink_Click(object sender, RoutedEventArgs e)
+        {
+            isDrinkLarge = true;
         }
 
         private void btnLibertyNights_Click(object sender, RoutedEventArgs e)
@@ -573,21 +629,6 @@ namespace proto_pos_v2
             comboCounter("Churros");
         }
 
-        private void comboDeal(string title, string burger, string side, string dessert, double price)
-        {
-            txtOutput.Text += title + "\n";
-            txtOutput.Text += burger + "\n";
-            txtOutput.Text += side + "\n";
-            txtOutput.Text += dessert + "\n";
-            txtOutput.Text += "Small Drink\n";
-            total += price;
-
-            txtPrices.Text += "$" + price.ToString() + "0\n\n\n\n\n";
-            totalAmount(total);
-            Console.WriteLine("comboDeal:");
-            orderLinesViaConsole();
-        }
-
         private void multiChoiceComboDeal(string title, string burger1, string burger2, string side, string dessert, double price)
         {
             //string finalBurgerChoice = "";
@@ -632,25 +673,6 @@ namespace proto_pos_v2
             //paymentWindow.ShowDialog();
         }
 
-        private void comboCounter(string menuItem)
-        {
-            string sourceText = txtOutput.Text;
-            string wordToCount = "COMBO";
-
-            int comboCount = sourceText.Split(new string[] { wordToCount }, StringSplitOptions.None).Length - 1;
-
-            if (AddOnCount == comboCount || comboCount == 0)
-            {
-                MessageBox.Show("You have added the maximum amount of add-ons for your combos.");
-            }
-            else
-            {
-                // selectMenuItemFromDB(menuItem, 3.00);
-                AddOnCount++;
-            }
-            orderLinesViaConsole();
-        }
-
         private void btnUndo_Click(object sender, RoutedEventArgs e)
         {
             orderLines.RemoveAt(orderLines.Count - 1);
@@ -660,29 +682,6 @@ namespace proto_pos_v2
             total = prices.Sum();
             txtTotal.Text = total.ToString("C");
             orderLinesViaConsole();
-        }
-
-        private void discount(double percentage)
-        {
-            if (isDiscountedTenPercent == true)
-            {
-                MessageBox.Show("You have already applied a 10% discount to this order.");
-                return;
-            }
-            else
-            {
-                double percent = percentage / 100;
-                double discountedAmount = total * percent;
-                double discountedTotal = total - discountedAmount;
-
-                txtOutput.Text = $"{percentage}% discount Applied.\n\n" + txtOutput.Text;
-                txtPrices.Text = "\n\n" + txtPrices.Text;
-
-                total = discountedTotal;
-                txtTotal.Text = discountedTotal.ToString("C");
-
-                isDiscountedTenPercent = true;
-            }
         }
 
         private void btnTenPercentDiscount_Click(object sender, RoutedEventArgs e)
