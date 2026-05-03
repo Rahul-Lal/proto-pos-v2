@@ -115,14 +115,51 @@ namespace proto_pos_v2
 
             Console.WriteLine("------ END OF LINE ------");
         }
+        
+        //private void setDrinkSize()
+        //{
+        //    if (isDrinkSmall)
+        //    {
+        //        txtOutput.Text += "Small ";
+        //        txtPrices.Text += "$2.50\n";
+        //        total += 2.50;
+        //        totalAmount(total);
+        //        isDrinkSmall = false;
+        //    }
+        //    else if (isDrinkMedium)
+        //    {
+        //        txtOutput.Text += "Medium ";
+        //        txtPrices.Text += "$3.50\n";
+        //        total += 3.50;
+        //        totalAmount(total);
+        //        isDrinkMedium = false;
+        //    }
+        //    else if (isDrinkLarge)
+        //    {
+        //        txtOutput.Text += "Large ";
+        //        txtPrices.Text += "$4.50\n";
+        //        total += 4.50;
+        //        totalAmount(total);
+        //        isDrinkLarge = false;
+        //    }
+        //}
 
         private void setDrinkFlavour(string drink)
         {
-            if (isDrinkLarge == true || isDrinkMedium == true || isDrinkSmall == true)
+            if (isDrinkLarge == true)
             {
-                setDrinkSize();
-                txtOutput.Text += $"{drink}\n";
-                Console.WriteLine(txtOutput.Text);
+                selectMenuItemFromDB($"Large {drink}");
+                isDrinkLarge = false;
+            }
+            else if (isDrinkMedium == true)
+            {
+                selectMenuItemFromDB($"Medium {drink}");
+                isDrinkMedium = false;
+            }
+            else if (isDrinkSmall == true)
+            {
+                selectMenuItemFromDB($"Small {drink}");
+                isDrinkSmall = false;
             }
             else
             {
@@ -495,7 +532,7 @@ namespace proto_pos_v2
 
         private void btnCoke_Click(object sender, RoutedEventArgs e)
         {
-            setDrinkFlavour("Coke");
+            setDrinkFlavour("Coca-Cola");
         }
 
         private void btnCokeNS_Click(object sender, RoutedEventArgs e)
@@ -515,7 +552,7 @@ namespace proto_pos_v2
 
         private void btnLnP_Click(object sender, RoutedEventArgs e)
         {
-            setDrinkFlavour("LnP");
+            setDrinkFlavour("L&P");
         }
 
         private void btnSparletta_Click(object sender, RoutedEventArgs e)
@@ -533,33 +570,6 @@ namespace proto_pos_v2
             ClearOutput();
         }
 
-        private void setDrinkSize()
-        {
-            if (isDrinkSmall)
-            {
-                txtOutput.Text += "Small ";
-                txtPrices.Text += "$2.50\n";
-                total += 2.50;
-                totalAmount(total);
-                isDrinkSmall = false;
-            }
-            else if (isDrinkMedium)
-            {
-                txtOutput.Text += "Medium ";
-                txtPrices.Text += "$3.50\n";
-                total += 3.50;
-                totalAmount(total);
-                isDrinkMedium = false;
-            }
-            else if (isDrinkLarge)
-            {
-                txtOutput.Text += "Large ";
-                txtPrices.Text += "$4.50\n";
-                total += 4.50;
-                totalAmount(total);
-                isDrinkLarge = false;
-            }
-        }
 
         private void btnMediumDrink_Click(object sender, RoutedEventArgs e)
         {
