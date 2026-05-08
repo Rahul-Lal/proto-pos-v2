@@ -325,7 +325,7 @@ namespace proto_pos_v2
                             string name = reader["Name"].ToString();
                             string description = reader["Description"].ToString();
                             string basePrice = reader["BasePrice"].ToString();
-                            txtOutput.Text += name + " COMBO \n";
+                            txtOutput.Text += name.ToUpper() + " COMBO \n";
                             txtOutput.Text += description + "\n";
                             txtPrices.Text += $"${double.Parse(basePrice):0.00}\n\n\n\n\n";
                             total += double.Parse(basePrice);
