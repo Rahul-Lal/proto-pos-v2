@@ -115,7 +115,7 @@ namespace proto_pos_v2
 
             Console.WriteLine("------ END OF LINE ------");
         }
-        
+
         //private void setDrinkSize()
         //{
         //    if (isDrinkSmall)
@@ -304,16 +304,45 @@ namespace proto_pos_v2
             }
         }
 
-        private void comboDeal(string title, string burger, string side, string dessert, double price)
+        private void comboDeal(string title)
         {
-            txtOutput.Text += title + "\n";
-            txtOutput.Text += burger + "\n";
-            txtOutput.Text += side + "\n";
-            txtOutput.Text += dessert + "\n";
-            txtOutput.Text += "Small Drink\n";
-            total += price;
+            string constring = "Server=(localdb)\\MSSQLLocalDB;Database=TestPOSDB;Trusted_Connection=true;TrustServerCertificate=true";
 
-            txtPrices.Text += "$" + price.ToString() + "0\n\n\n\n\n";
+            using (SqlConnection con = new SqlConnection(constring))
+            {
+                con.Open();
+
+                string query = $"SELECT Name, Description, BasePrice FROM MenuItem WHERE Name = @name";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@name", title);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string name = reader["Name"].ToString();
+                            string description = reader["Description"].ToString();
+                            string basePrice = reader["BasePrice"].ToString();
+                            txtOutput.Text += name + " COMBO \n";
+                            txtOutput.Text += description + "\n";
+                            txtPrices.Text += $"${double.Parse(basePrice):0.00}\n";
+                            total += double.Parse(basePrice);
+                            totalAmount(total);
+
+                            //txtOutput.Text += title + "\n";
+                            //txtOutput.Text += burger + "\n";
+                            //txtOutput.Text += side + "\n";
+                            //txtOutput.Text += dessert + "\n";
+                            txtOutput.Text += "Small Drink\n";
+                            total += double.Parse(basePrice);
+
+                            txtPrices.Text += "$" + double.Parse(basePrice).ToString("0.00") + "\n\n\n\n\n";
+                        }
+                    }
+                }
+            }
             totalAmount(total);
             Console.WriteLine("comboDeal:");
             orderLinesViaConsole();
@@ -542,12 +571,12 @@ namespace proto_pos_v2
 
         private void btnJarritos_Click(object sender, RoutedEventArgs e)
         {
-            setDrinkFlavour("Jarritos Grapefruit");
+            setDrinkFlavour("Jarritos Mandarin");
         }
 
         private void btnIrnBru_Click(object sender, RoutedEventArgs e)
         {
-            setDrinkFlavour("Irn Bru");
+            setDrinkFlavour("Irn-Bru");
         }
 
         private void btnLnP_Click(object sender, RoutedEventArgs e)
@@ -588,12 +617,12 @@ namespace proto_pos_v2
 
         private void btnLibertyNights_Click(object sender, RoutedEventArgs e)
         {
-            comboDeal("LIBERTY NIGHTS COMBO", "Nashville Hot", "Large Fries", "Apple Pie", 15.50);
+            comboDeal("Liberty Box");
         }
 
         private void btnVenetianBite_Click(object sender, RoutedEventArgs e)
         {
-            comboDeal("VENETIAN BITE COMBO", "Single Roma Burger", "Mozzarella Sticks", "Tiramisu Cup", 15.50);
+            comboDeal("Venetian Bite");
         }
 
         private void btnFiestaBox_Click(object sender, RoutedEventArgs e)
@@ -603,7 +632,7 @@ namespace proto_pos_v2
 
         private void btnKyotoNights_Click(object sender, RoutedEventArgs e)
         {
-            comboDeal("KYOTO NIGHTS COMBO", "Kyoto Katsu Burger", "Spring Rolls", "Mochi Ice Cream", 15.50);
+            comboDeal("Kyoto Nights");
         }
 
         private void btnGroupTour_Click(object sender, RoutedEventArgs e)
