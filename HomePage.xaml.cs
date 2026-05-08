@@ -327,7 +327,7 @@ namespace proto_pos_v2
                             string basePrice = reader["BasePrice"].ToString();
                             txtOutput.Text += name + " COMBO \n";
                             txtOutput.Text += description + "\n";
-                            txtPrices.Text += $"${double.Parse(basePrice):0.00}\n";
+                            txtPrices.Text += $"${double.Parse(basePrice):0.00}\n\n\n\n\n";
                             total += double.Parse(basePrice);
                             totalAmount(total);
 
@@ -335,10 +335,6 @@ namespace proto_pos_v2
                             //txtOutput.Text += burger + "\n";
                             //txtOutput.Text += side + "\n";
                             //txtOutput.Text += dessert + "\n";
-                            txtOutput.Text += "Small Drink\n";
-                            total += double.Parse(basePrice);
-
-                            txtPrices.Text += "$" + double.Parse(basePrice).ToString("0.00") + "\n\n\n\n\n";
                         }
                     }
                 }
