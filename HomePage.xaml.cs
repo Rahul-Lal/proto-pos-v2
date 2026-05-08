@@ -326,32 +326,32 @@ namespace proto_pos_v2
                             string description = reader["Description"].ToString();
                             string basePrice = reader["BasePrice"].ToString();
 
-                            int commaIndex = description.IndexOf(",");
+                            string[] descriptionParts = description.Split(", ");
 
-                            if (commaIndex != -1)
+
+                            txtOutput.Text += name.ToUpper() + " COMBO \n";
+
+                            foreach (string part in descriptionParts)
                             {
-                                description = description.Substring(0, commaIndex) + "\n" + description.Substring(commaIndex + 1);
+                                txtOutput.Text += part + "\n";
                             }
-                            else {
 
-                            }
-                                txtOutput.Text += name.ToUpper() + " COMBO \n";
-                                txtOutput.Text += description + "\n";
-                                txtPrices.Text += $"${double.Parse(basePrice):0.00}\n\n\n\n\n";
-                                total += double.Parse(basePrice);
-                                totalAmount(total);
+                            // txtOutput.Text += description + "\n";
+                            txtPrices.Text += $"${double.Parse(basePrice):0.00}\n\n\n\n\n";
+                            total += double.Parse(basePrice);
+                            totalAmount(total);
 
-                                //txtOutput.Text += title + "\n";
-                                //txtOutput.Text += burger + "\n";
-                                //txtOutput.Text += side + "\n";
-                                //txtOutput.Text += dessert + "\n";
+                            //txtOutput.Text += title + "\n";
+                            //txtOutput.Text += burger + "\n";
+                            //txtOutput.Text += side + "\n";
+                            //txtOutput.Text += dessert + "\n";
                         }
                     }
                 }
+                totalAmount(total);
+                Console.WriteLine("comboDeal:");
+                orderLinesViaConsole();
             }
-            totalAmount(total);
-            Console.WriteLine("comboDeal:");
-            orderLinesViaConsole();
         }
 
         private void btnSingleOlympian_Click(object sender, RoutedEventArgs e)
