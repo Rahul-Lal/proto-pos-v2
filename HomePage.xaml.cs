@@ -356,9 +356,52 @@ namespace proto_pos_v2
 
         private void multiChoiceComboDeal(string title, string burger1, string burger2, string side, string dessert, double price)
         {
+            string constring = "Server=(localdb)\\MSSQLLocalDB;Database=TestPOSDB;Trusted_Connection=true;TrustServerCertificate=true";
+
+            using (SqlConnection con = new SqlConnection(constring))
+            {
+                con.Open();
+
+                string query = $"SELECT Name, Description, BasePrice FROM MenuItem WHERE Name = @name";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@name", title);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string name = reader["Name"].ToString();
+                            string description = reader["Description"].ToString();
+                            string basePrice = reader["BasePrice"].ToString();
+
+                            string[] descriptionParts = description.Split(", ");
 
 
-            Console.WriteLine("multiChoiceComboDeal: ");
+                            txtOutput.Text += name.ToUpper() + " COMBO \n";
+
+                            foreach (string part in descriptionParts)
+                            {
+                                txtOutput.Text += part + "\n";
+                            }
+
+                            // txtOutput.Text += description + "\n";
+                            txtPrices.Text += $"${double.Parse(basePrice):0.00}\n\n\n\n\n";
+                            total += double.Parse(basePrice);
+                            totalAmount(total);
+
+                            //txtOutput.Text += title + "\n";
+                            //txtOutput.Text += burger + "\n";
+                            //txtOutput.Text += side + "\n";
+                            //txtOutput.Text += dessert + "\n";
+                        }
+                    }
+                }
+            }
+
+
+                Console.WriteLine("multiChoiceComboDeal: ");
             orderLinesViaConsole();
             totalAmount(total);
         }
