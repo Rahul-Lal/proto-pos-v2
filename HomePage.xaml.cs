@@ -325,16 +325,26 @@ namespace proto_pos_v2
                             string name = reader["Name"].ToString();
                             string description = reader["Description"].ToString();
                             string basePrice = reader["BasePrice"].ToString();
-                            txtOutput.Text += name.ToUpper() + " COMBO \n";
-                            txtOutput.Text += description + "\n";
-                            txtPrices.Text += $"${double.Parse(basePrice):0.00}\n\n\n\n\n";
-                            total += double.Parse(basePrice);
-                            totalAmount(total);
 
-                            //txtOutput.Text += title + "\n";
-                            //txtOutput.Text += burger + "\n";
-                            //txtOutput.Text += side + "\n";
-                            //txtOutput.Text += dessert + "\n";
+                            int commaIndex = description.IndexOf(",");
+
+                            if (commaIndex != -1)
+                            {
+                                description = description.Substring(0, commaIndex) + "\n" + description.Substring(commaIndex + 1);
+                            }
+                            else {
+
+                            }
+                                txtOutput.Text += name.ToUpper() + " COMBO \n";
+                                txtOutput.Text += description + "\n";
+                                txtPrices.Text += $"${double.Parse(basePrice):0.00}\n\n\n\n\n";
+                                total += double.Parse(basePrice);
+                                totalAmount(total);
+
+                                //txtOutput.Text += title + "\n";
+                                //txtOutput.Text += burger + "\n";
+                                //txtOutput.Text += side + "\n";
+                                //txtOutput.Text += dessert + "\n";
                         }
                     }
                 }
