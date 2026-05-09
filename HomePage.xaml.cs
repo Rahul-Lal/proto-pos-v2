@@ -116,34 +116,6 @@ namespace proto_pos_v2
             Console.WriteLine("------ END OF LINE ------");
         }
 
-        //private void setDrinkSize()
-        //{
-        //    if (isDrinkSmall)
-        //    {
-        //        txtOutput.Text += "Small ";
-        //        txtPrices.Text += "$2.50\n";
-        //        total += 2.50;
-        //        totalAmount(total);
-        //        isDrinkSmall = false;
-        //    }
-        //    else if (isDrinkMedium)
-        //    {
-        //        txtOutput.Text += "Medium ";
-        //        txtPrices.Text += "$3.50\n";
-        //        total += 3.50;
-        //        totalAmount(total);
-        //        isDrinkMedium = false;
-        //    }
-        //    else if (isDrinkLarge)
-        //    {
-        //        txtOutput.Text += "Large ";
-        //        txtPrices.Text += "$4.50\n";
-        //        total += 4.50;
-        //        totalAmount(total);
-        //        isDrinkLarge = false;
-        //    }
-        //}
-
         private void setDrinkFlavour(string drink)
         {
             if (isDrinkLarge == true)
@@ -340,11 +312,6 @@ namespace proto_pos_v2
                             txtPrices.Text += $"${double.Parse(basePrice):0.00}\n\n\n\n\n";
                             total += double.Parse(basePrice);
                             totalAmount(total);
-
-                            //txtOutput.Text += title + "\n";
-                            //txtOutput.Text += burger + "\n";
-                            //txtOutput.Text += side + "\n";
-                            //txtOutput.Text += dessert + "\n";
                         }
                     }
                 }
@@ -390,18 +357,11 @@ namespace proto_pos_v2
                             txtPrices.Text += $"${double.Parse(basePrice):0.00}\n\n\n\n\n";
                             total += double.Parse(basePrice);
                             totalAmount(total);
-
-                            //txtOutput.Text += title + "\n";
-                            //txtOutput.Text += burger + "\n";
-                            //txtOutput.Text += side + "\n";
-                            //txtOutput.Text += dessert + "\n";
                         }
                     }
                 }
             }
-
-
-                Console.WriteLine("multiChoiceComboDeal: ");
+            Console.WriteLine("multiChoiceComboDeal: ");
             orderLinesViaConsole();
             totalAmount(total);
         }
@@ -685,7 +645,7 @@ namespace proto_pos_v2
 
         private void btnFiestaBox_Click(object sender, RoutedEventArgs e)
         {
-            multiChoiceComboDeal("FIESTA BOX COMBO", "Baja Chicken", "Oaxaca Veggie", "Loaded Nachos", "Churros", 17.50);
+            multiChoiceComboDeal("Fiesta Box");
         }
 
         private void btnKyotoNights_Click(object sender, RoutedEventArgs e)
