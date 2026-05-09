@@ -351,7 +351,16 @@ namespace proto_pos_v2
 
                             txtOutput.Text += name.ToUpper() + " COMBO \n";
 
-
+                            MessageBoxResult result = MessageBox.Show($"Would you like to replace the {burgerChoice[0]} with {burgerChoice[1]}?","Question!" , MessageBoxButton.YesNo);
+                            
+                            if(result == MessageBoxResult.Yes)
+                            { 
+                                txtOutput.Text += burgerChoice[1] + "\n";
+                            }
+                            else
+                            {
+                                txtOutput.Text += burgerChoice[0] + "\n";
+                            }
 
                             foreach (string part in descriptionParts)
                             {
