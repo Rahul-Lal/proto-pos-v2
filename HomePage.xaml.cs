@@ -354,7 +354,7 @@ namespace proto_pos_v2
             }
         }
 
-        private void multiChoiceComboDeal(string title, string burger1, string burger2, string side, string dessert, double price)
+        private void multiChoiceComboDeal(string title)
         {
             string constring = "Server=(localdb)\\MSSQLLocalDB;Database=TestPOSDB;Trusted_Connection=true;TrustServerCertificate=true";
 
