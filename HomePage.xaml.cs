@@ -344,9 +344,14 @@ namespace proto_pos_v2
                             string basePrice = reader["BasePrice"].ToString();
 
                             string[] descriptionParts = description.Split(", ");
+                            string[] burgerChoice = descriptionParts[0].Split(" or ");
+
+                            descriptionParts = descriptionParts.Skip(1).ToArray();
 
 
                             txtOutput.Text += name.ToUpper() + " COMBO \n";
+
+
 
                             foreach (string part in descriptionParts)
                             {
