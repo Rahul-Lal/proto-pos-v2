@@ -631,7 +631,6 @@ namespace proto_pos_v2
             ClearOutput();
         }
 
-
         private void btnMediumDrink_Click(object sender, RoutedEventArgs e)
         {
             isDrinkMedium = true;
