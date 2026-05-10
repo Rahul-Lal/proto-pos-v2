@@ -277,7 +277,7 @@ namespace proto_pos_v2
             }
             else
             {
-                // selectMenuItemFromDB(menuItem, 3.00);
+                selectAddOns(menuItem);
                 AddOnCount++;
             }
             orderLinesViaConsole();
