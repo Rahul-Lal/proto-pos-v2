@@ -68,6 +68,36 @@ namespace proto_pos_v2
             }
         }
 
+        private void selectAddOns(string menuitem)
+        {
+            string constring = "Server=(localdb)\\MSSQLLocalDB;Database=TestPOSDB;Trusted_Connection=true;TrustServerCertificate=true";
+
+            using (SqlConnection con = new SqlConnection(constring))
+            {
+                con.Open();
+
+                string query = $"SELECT Name, BasePrice FROM MenuItem WHERE Name = @name AND BasePrice = 3.00";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@name", menuitem);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string name = reader["Name"].ToString();
+                            string price = reader["BasePrice"].ToString();
+                            txtOutput.Text += name + "\n";
+                            txtPrices.Text += $"${double.Parse(price):0.00}\n";
+                            total += double.Parse(price);
+                            totalAmount(total);
+                        }
+                    }
+                }
+            }
+        }
+
         private void RefreshUI()
         {
             txtOutput.Text = string.Join("\n", orderLines);
