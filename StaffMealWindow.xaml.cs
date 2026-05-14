@@ -60,6 +60,7 @@ namespace proto_pos_v2
                     }
                 }
             }
+            this.Close();
         }
 
         private void btnSingleOlympian_Click(object sender, RoutedEventArgs e)
