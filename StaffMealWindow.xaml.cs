@@ -64,7 +64,10 @@ namespace proto_pos_v2
                     }
                 }
             }
-
+            else
+            {
+                MessageBox.Show("You have already selected a staff meal. Please proceed to checkout or remove the current staff meal to select a different one.");
+            }
             this.Close();
         }
 
