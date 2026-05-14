@@ -26,22 +26,6 @@ namespace proto_pos_v2
             _home = home;
         }
 
-        //private void selectMenuItemFromDB(string burger)
-        //{
-        //    string chosenCombo;
-
-        //    chosenCombo = burger.ToUpper() + " STAFF COMBO\n" +
-        //            burger + " Burger \n" +
-        //            "Medium Fries \n" +
-        //            "Medium Drink \n";
-
-        //    _home.txtOutput.Text += chosenCombo;
-        //    _home.txtPrices.Text += "$0.00";
-        //    _home.total += 0.00;
-        //    _home.isStaffMealSelected = true;
-        //    this.Close();
-        //}
-
         private void selectMenuItemFromDB(string menuitem)
         {
             string constring = "Server=(localdb)\\MSSQLLocalDB;Database=TestPOSDB;Trusted_Connection=true;TrustServerCertificate=true";
