@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -25,20 +26,55 @@ namespace proto_pos_v2
             _home = home;
         }
 
-        private void printStaffMeal(string burger)
+        //private void printStaffMeal(string burger)
+        //{
+        //    string chosenCombo;
+
+        //    chosenCombo = burger.ToUpper() + " STAFF COMBO\n" +
+        //            burger + " Burger \n" +
+        //            "Medium Fries \n" +
+        //            "Medium Drink \n";
+
+        //    _home.txtOutput.Text += chosenCombo;
+        //    _home.txtPrices.Text += "$0.00";
+        //    _home.total += 0.00;
+        //    _home.isStaffMealSelected = true;
+        //    this.Close();
+        //}
+
+        private void selectMenuItemFromDB(string menuitem)
         {
-            string chosenCombo;
+            string constring = "Server=(localdb)\\MSSQLLocalDB;Database=TestPOSDB;Trusted_Connection=true;TrustServerCertificate=true";
 
-            chosenCombo = burger.ToUpper() + " STAFF COMBO\n" +
-                    burger + " Burger \n" +
-                    "Medium Fries \n" +
-                    "Medium Drink \n";
+            using (SqlConnection con = new SqlConnection(constring))
+            {
+                con.Open();
 
-            _home.txtOutput.Text += chosenCombo;
-            _home.txtPrices.Text += "$0.00";
-            _home.total += 0.00;
-            _home.isStaffMealSelected = true;
-            this.Close();
+                string query = $"SELECT Name, BasePrice FROM MenuItem WHERE Name = @name";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@name", menuitem);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string name = reader["Name"].ToString();
+                            string chosenCombo;
+
+                            chosenCombo = name.ToUpper() + " STAFF COMBO\n" +
+                                    name + " Burger \n" +
+                                    "Medium Fries \n" +
+                                    "Medium Drink \n";
+
+                            _home.txtOutput.Text += chosenCombo;
+                            _home.txtPrices.Text += "$0.00";
+                            _home.total += 0.00;
+                            _home.isStaffMealSelected = true;
+                        }
+                    }
+            }
         }
 
         private void btnSingleOlympian_Click(object sender, RoutedEventArgs e)
