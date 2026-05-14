@@ -26,7 +26,7 @@ namespace proto_pos_v2
             _home = home;
         }
 
-        //private void printStaffMeal(string burger)
+        //private void selectMenuItemFromDB(string burger)
         //{
         //    string chosenCombo;
 
@@ -80,52 +80,52 @@ namespace proto_pos_v2
 
         private void btnSingleOlympian_Click(object sender, RoutedEventArgs e)
         {
-            printStaffMeal("Single Olympian");
+            selectMenuItemFromDB("Single Olympian");
         }
 
         private void btnSingleParisan_Click(object sender, RoutedEventArgs e)
         {
-            printStaffMeal("Single Parisian");
+            selectMenuItemFromDB("Single Parisian");
         }
 
         private void btnSingleRoma_Click(object sender, RoutedEventArgs e)
         {
-            printStaffMeal("Single Roma");
+            selectMenuItemFromDB("Single Roma");
         }
 
         private void btnNashvilleHot_Click(object sender, RoutedEventArgs e)
         {
-            printStaffMeal("Nashville Hot");
+            selectMenuItemFromDB("Nashville Hot");
         }
 
         private void btnKyotoKatsu_Click(object sender, RoutedEventArgs e)
         {
-            printStaffMeal("Kyoto Katsu");
+            selectMenuItemFromDB("Kyoto Katsu");
         }
 
         private void btnMarrakesh_Click(object sender, RoutedEventArgs e)
         {
-            printStaffMeal("Marrakesh Chicken");
+            selectMenuItemFromDB("Marrakesh Chicken");
         }
 
         private void btnOaxaca_Click(object sender, RoutedEventArgs e)
         {
-            printStaffMeal("Oaxaca Veggie");
+            selectMenuItemFromDB("Oaxaca Veggie");
         }
 
         private void btnBombay_Click(object sender, RoutedEventArgs e)
         {
-            printStaffMeal("Bombay Veggie");
+            selectMenuItemFromDB("Bombay Veggie");
         }
 
         private void btnNordic_Click(object sender, RoutedEventArgs e)
         {
-            printStaffMeal("Nordic Fish");
+            selectMenuItemFromDB("Nordic Fish");
         }
 
         private void btnHavana_Click(object sender, RoutedEventArgs e)
         {
-            printStaffMeal("Havana Fish");
+            selectMenuItemFromDB("Havana Fish");
         }
     }
 }
