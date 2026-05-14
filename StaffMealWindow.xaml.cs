@@ -29,8 +29,9 @@ namespace proto_pos_v2
         private void selectMenuItemFromDB(string menuitem)
         {
             string constring = "Server=(localdb)\\MSSQLLocalDB;Database=TestPOSDB;Trusted_Connection=true;TrustServerCertificate=true";
+            bool isStaffMealSelected = _home.isStaffMealSelected;
 
-            if()
+            if (isStaffMealSelected == false)
             {
                 using (SqlConnection con = new SqlConnection(constring))
                 {
@@ -63,6 +64,7 @@ namespace proto_pos_v2
                     }
                 }
             }
+
             this.Close();
         }
 
