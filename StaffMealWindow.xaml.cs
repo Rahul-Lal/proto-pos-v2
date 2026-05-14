@@ -30,32 +30,35 @@ namespace proto_pos_v2
         {
             string constring = "Server=(localdb)\\MSSQLLocalDB;Database=TestPOSDB;Trusted_Connection=true;TrustServerCertificate=true";
 
-            using (SqlConnection con = new SqlConnection(constring))
+            if()
             {
-                con.Open();
-
-                string query = $"SELECT Name, BasePrice FROM MenuItem WHERE Name = @name";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                using (SqlConnection con = new SqlConnection(constring))
                 {
-                    cmd.Parameters.AddWithValue("@name", menuitem);
+                    con.Open();
 
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    string query = $"SELECT Name, BasePrice FROM MenuItem WHERE Name = @name";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        if (reader.Read())
+                        cmd.Parameters.AddWithValue("@name", menuitem);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            string name = reader["Name"].ToString();
-                            string chosenCombo;
+                            if (reader.Read())
+                            {
+                                string name = reader["Name"].ToString();
+                                string chosenCombo;
 
-                            chosenCombo = name.ToUpper() + " STAFF COMBO\n" +
-                                    name + " Burger \n" +
-                                    "Medium Fries \n" +
-                                    "Medium Drink \n";
+                                chosenCombo = name.ToUpper() + " STAFF COMBO\n" +
+                                        name + " Burger \n" +
+                                        "Medium Fries \n" +
+                                        "Medium Drink \n";
 
-                            _home.txtOutput.Text += chosenCombo;
-                            _home.txtPrices.Text += "$0.00";
-                            _home.total += 0.00;
-                            _home.isStaffMealSelected = true;
+                                _home.txtOutput.Text += chosenCombo;
+                                _home.txtPrices.Text += "$0.00";
+                                _home.total += 0.00;
+                                _home.isStaffMealSelected = true;
+                            }
                         }
                     }
                 }
