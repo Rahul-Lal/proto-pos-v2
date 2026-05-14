@@ -74,6 +74,7 @@ namespace proto_pos_v2
                             _home.isStaffMealSelected = true;
                         }
                     }
+                }
             }
         }
 
