@@ -26,5 +26,12 @@ namespace proto_pos_v2
         public bool isShake = false;
 
         public string chosenDrink = "";
+
+        private void btnCoke_Click(object sender, RoutedEventArgs e)
+        {
+            isSoda = true;
+            chosenDrink = "Coke";
+            this.Close();
+        }
     }
 }
