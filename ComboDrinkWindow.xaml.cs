@@ -33,5 +33,12 @@ namespace proto_pos_v2
             chosenDrink = "Coke";
             this.Close();
         }
+
+        private void btnCokeNS_Click(object sender, RoutedEventArgs e)
+        {
+            isSoda = true;
+            chosenDrink = "Coke No Sugar";
+            this.Close();
+        }
     }
 }
