@@ -193,6 +193,7 @@ namespace proto_pos_v2
 
             MakeComboWindow makeCombo = new MakeComboWindow();
             makeCombo.ShowDialog();
+            makeCombo.Close();
 
             string constring = "Server=(localdb)\\MSSQLLocalDB;Database=TestPOSDB;Trusted_Connection=true;TrustServerCertificate=true";
 
@@ -215,9 +216,7 @@ namespace proto_pos_v2
                             if (makeCombo.makeLarge == true)
                             {
                                 chosenCombo = burger.ToUpper() + " LARGE COMBO\n" +
-                                    burger + " Burger \n" +
-                                    "Large Fries \n" +
-                                    "Large Drink \n";
+                                    burger + " Burger \n";
 
                                 txtOutput.Text += chosenCombo;
                                 orderLines.Add(chosenCombo);
@@ -226,6 +225,10 @@ namespace proto_pos_v2
                                 total += double.Parse(price) + 7.5;
                                 // prices.Add(price + 7.5);
                                 totalAmount(total);
+
+
+
+                                sideOption(chosenCombo, "Large");
 
                                 makeCombo.makeLarge = false;
                                 makeCombo.Close();
