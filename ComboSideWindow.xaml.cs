@@ -62,5 +62,12 @@ namespace proto_pos_v2
             chosenSide = "Spring Rolls";
             this.Close();
         }
+
+        private void btnLoadedNachos_Click(object sender, RoutedEventArgs e)
+        {
+            makeLoadedNachos = true;
+            chosenSide = "Loaded Nachos";
+            this.Close();
+        }
     }
 }
