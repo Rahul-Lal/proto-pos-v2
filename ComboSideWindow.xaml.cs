@@ -33,5 +33,12 @@ namespace proto_pos_v2
         public bool makePoutine = false;
 
         public string chosenSide = "";
+
+        private void btnFries_Click(object sender, RoutedEventArgs e)
+        {
+            makeFries = true;
+            chosenSide = "Fries";
+            this.Close();
+        }
     }
 }
