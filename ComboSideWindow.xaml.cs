@@ -69,5 +69,12 @@ namespace proto_pos_v2
             chosenSide = "Loaded Nachos";
             this.Close();
         }
+
+        private void btnPoutine_Click(object sender, RoutedEventArgs e)
+        {
+            makePoutine = true;
+            chosenSide = "Poutine";
+            this.Close();
+        }
     }
 }
