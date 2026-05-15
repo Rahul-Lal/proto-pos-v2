@@ -24,5 +24,14 @@ namespace proto_pos_v2
             InitializeComponent();
             _home = home;
         }
+
+        public bool makeFries = false;
+        public bool makeGarlicBread = false;
+        public bool makeMozzarellaStick = false;
+        public bool makeSpringRoll = false;
+        public bool makeLoadedNachos = false;
+        public bool makePoutine = false;
+
+        public string chosenSide = "";
     }
 }
