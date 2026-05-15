@@ -21,5 +21,10 @@ namespace proto_pos_v2
         {
             InitializeComponent();
         }
+
+        public bool isSoda = false;
+        public bool isShake = false;
+
+        public string chosenDrink = "";
     }
 }
