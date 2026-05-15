@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:proto_pos_v2"
         mc:Ignorable="d"
-        Title="ComboDrinkWindow" Height="450" Width="800">
+        Title="Combo Drink Window" Height="500" Width="1050">
     <Grid>
-        
+        <Label Content="Choose Your Drink!" Margin="0,23,0,0" FontSize="50" FontFamily="Agency FB" Width="365" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontWeight="Bold" />
+        <Button x:Name="btnCoke" Content="Coke" Click="btnCoke_Click" Margin="17,109,893,195" Width="140" Height="180"/>
+        <Button x:Name="btnCokeNS" Content="CokeNS" Click="btnCokeNS_Click" Margin="162,109,748,195" Width="140" Height="180"/>
+        <Button x:Name="btnJarritos" Content="Jarritos" Click="btnJarritos_Click" Margin="307,109,603,195" Width="140" Height="180"/>
+        <Button x:Name="btnIrnBru" Content="Irn Bru" Click="btnIrnBru_Click" Margin="455,109,455,195" Width="140" Height="180"/>
+        <Button x:Name="btnLnP" Content="LnP" Click="btnLnP_Click" Margin="600,109,310,195" Width="140" Height="180"/>
+        <Button x:Name="btnSparletta" Content="Sparletta" Click="btnSparletta_Click" Margin="745,109,0,195" Width="140" Height="180" HorizontalAlignment="Left"/>
+        <Button x:Name="btnTing" Content="Ting" Click="btnTing_Click" Margin="890,109,20,195" Width="140" Height="180"/>
+
+        <Button x:Name="btnMatchaShake" Content="Matcha Green Tea Shake" Click="btnMatchaShake_Click" Margin="17,294,893,10" Width="140" Height="180"/>
+        <Button x:Name="btnChurroShake" Content="Churro Cinnamon Shake" Click="btnChurroShake_Click" Margin="162,294,748,10" Width="140" Height="180"/>
+        <Button x:Name="btnMangoLassiShake" Content="Mango Lassi Shake" Click="btnMangoLassiShake_Click" Margin="307,294,603,10" Width="140" Height="180"/>
+        <Button x:Name="btnPandanCoconutShake" Content="Pandan Coconut Shake" Click="btnPandanCoconutShake_Click" Margin="455,294,455,10" Width="140" Height="180"/>
+        <Button x:Name="btnTiramisuShake" Content="Tiramisu Shake" Click="btnTiramisuShake_Click" Margin="600,294,310,10" Width="140" Height="180"/>
+        <Button x:Name="btnDulceDeLecheShake" Content="Dulce De Leche Shake" Click="btnDulceDeLecheShake_Click" Margin="745,294,165,10" Width="140" Height="180" RenderTransformOrigin="0.267,0.495"/>
+        <Button x:Name="btnDubaiChocolateShake" Content="Dubai Chocolate Shake" Click="btnDubaiChocolateShake_Click" Margin="890,294,20,10" Width="140" Height="180"/>
     </Grid>
 </Window>
