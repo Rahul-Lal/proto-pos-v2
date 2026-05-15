@@ -186,6 +186,33 @@ namespace proto_pos_v2
             txtTotal.Text = total.ToString("C");
 
         }
+        private void sideOption(string combo, string size)
+        {
+            ComboSideWindow comboSide = new ComboSideWindow(this);
+            comboSide.ShowDialog();
+
+            if ((comboSide.makeGarlicBread == true) || (comboSide.makeMozzarellaStick == true) || (comboSide.makeSpringRoll == true))
+            {
+                combo += comboSide.chosenSide + "\n";
+                txtPrices.Text += "$1.00\n";
+                total += 1.00;
+                comboSide.Close();
+            }
+            else if ((comboSide.makeLoadedNachos == true) || (comboSide.makePoutine == true))
+            {
+                combo += comboSide.chosenSide + "\n";
+                txtPrices.Text += "$3.50\n";
+                total += 3.50;
+                comboSide.Close();
+            }
+            else
+            {
+                combo += $"{size} " + comboSide.chosenSide + "\n";
+                txtPrices.Text += "\n";
+                comboSide.Close();
+            }
+            drinkOption(combo, size);
+        }
 
         private void comboOption(string burger)
         {
