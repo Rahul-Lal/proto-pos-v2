@@ -40,5 +40,13 @@ namespace proto_pos_v2
             chosenSide = "Fries";
             this.Close();
         }
+
+        private void btnGarlicBread_Click(object sender, RoutedEventArgs e)
+        {
+            makeGarlicBread = true;
+            chosenSide = "Garlic Bread";
+            this.Close();
+
+        }
     }
 }
