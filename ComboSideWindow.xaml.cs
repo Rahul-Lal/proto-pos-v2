@@ -17,9 +17,12 @@ namespace proto_pos_v2
     /// </summary>
     public partial class ComboSideWindow : Window
     {
-        public ComboSideWindow()
+        private readonly HomePage _home;
+
+        public ComboSideWindow(HomePage home)
         {
             InitializeComponent();
+            _home = home;
         }
     }
 }
