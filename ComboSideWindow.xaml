@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="ComboSideWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button x:Name="btnFries" Content="Fries" Click="btnFries_Click" Margin="96,149,508,181"/>
+        <Button x:Name="btnGarlicBread" Content="Garlic Bread" Click="btnGarlicBread_Click" Margin="297,149,307,181"/>
+        <Button x:Name="btnMozzarellaStick" Content="Mozzarella Stick" Click="btnMozzarellaStick_Click" Margin="498,149,106,181"/>
+        <Button x:Name="btnSpringRoll" Content="Spring Roll" Click="btnSpringRoll_Click" Margin="96,274,508,56"/>
+        <Button x:Name="btnLoadedNachos" Content="Loaded Nachos" Click="btnLoadedNachos_Click" Margin="297,274,307,56"/>
+        <Button x:Name="btnPoutine" Content="Poutine" Click="btnPoutine_Click" Margin="498,274,106,56"/>
     </Grid>
 </Window>
