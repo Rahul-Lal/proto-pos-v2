@@ -55,5 +55,12 @@ namespace proto_pos_v2
             chosenSide = "Mozzarella Sticks";
             this.Close();
         }
+
+        private void btnSpringRoll_Click(object sender, RoutedEventArgs e)
+        {
+            makeSpringRoll = true;
+            chosenSide = "Spring Rolls";
+            this.Close();
+        }
     }
 }
