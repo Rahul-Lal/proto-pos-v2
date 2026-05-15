@@ -48,5 +48,12 @@ namespace proto_pos_v2
             this.Close();
 
         }
+
+        private void btnMozzarellaStick_Click(object sender, RoutedEventArgs e)
+        {
+            makeMozzarellaStick = true;
+            chosenSide = "Mozzarella Sticks";
+            this.Close();
+        }
     }
 }
