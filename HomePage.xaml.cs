@@ -273,10 +273,10 @@ namespace proto_pos_v2
                                 chosenCombo = burger.ToUpper() + " LARGE COMBO\n" +
                                     burger + " Burger \n";
 
-                                txtOutput.Text += chosenCombo;
+                                // txtOutput.Text += chosenCombo;
                                 orderLines.Add(chosenCombo);
 
-                                txtPrices.Text += $"${(double.Parse(price) + 7.5):0.00}\n\n\n\n";
+                                txtPrices.Text += $"${(double.Parse(price) + 7.5):0.00}\n\n";
                                 total += double.Parse(price) + 7.5;
                                 // prices.Add(price + 7.5);
                                 totalAmount(total);
