@@ -117,5 +117,12 @@ namespace proto_pos_v2
             chosenDrink = "Dulce De Leche Shake";
             this.Close();
         }
+
+        private void btnDubaiChocolateShake_Click(object sender, RoutedEventArgs e)
+        {
+            isShake = true;
+            chosenDrink = "Dubai Chocolate Shake";
+            this.Close();
+        }
     }
 }
