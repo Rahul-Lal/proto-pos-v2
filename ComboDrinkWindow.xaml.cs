@@ -103,5 +103,12 @@ namespace proto_pos_v2
             chosenDrink = "Pandan Coconut Shake";
             this.Close();
         }
+
+        private void btnTiramisuShake_Click(object sender, RoutedEventArgs e)
+        {
+            isShake = true;
+            chosenDrink = "Tiramisu Shake";
+            this.Close();
+        }
     }
 }
