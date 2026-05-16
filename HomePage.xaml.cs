@@ -289,14 +289,12 @@ namespace proto_pos_v2
                             else if (makeCombo.makeMedium == true)
                             {
                                 chosenCombo = burger.ToUpper() + " MEDIUM COMBO\n" +
-                                    burger + " Burger \n" +
-                                    "Medium Fries \n" +
-                                    "Medium Drink \n";
+                                    burger + " Burger \n";
 
-                                txtOutput.Text += chosenCombo;
+                                // txtOutput.Text += chosenCombo;
                                 orderLines.Add(chosenCombo);
 
-                                txtPrices.Text += $"${(double.Parse(price) + 5):0.00}\n\n\n\n";
+                                txtPrices.Text += $"${(double.Parse(price) + 5):0.00}\n\n";
                                 total += double.Parse(price) + 5;
                                 // prices.Add(price + 5);
                                 totalAmount(total);
