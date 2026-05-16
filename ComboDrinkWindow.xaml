@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:proto_pos_v2"
         mc:Ignorable="d"
-        Title="Combo Drink Window" Height="500" Width="1050">
+        Title="Combo Drink Window" Height="610" Width="1149">
     <Grid>
         <Label Content="Choose Your Drink!" Margin="0,23,0,0" FontSize="50" FontFamily="Agency FB" Width="365" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontWeight="Bold" />
         <Button x:Name="btnCoke" Content="Coke" Click="btnCoke_Click" Margin="17,109,893,195" Width="140" Height="180"/>
@@ -13,7 +13,7 @@
         <Button x:Name="btnJarritos" Content="Jarritos" Click="btnJarritos_Click" Margin="307,109,603,195" Width="140" Height="180"/>
         <Button x:Name="btnIrnBru" Content="Irn Bru" Click="btnIrnBru_Click" Margin="455,109,455,195" Width="140" Height="180"/>
         <Button x:Name="btnLnP" Content="LnP" Click="btnLnP_Click" Margin="600,109,310,195" Width="140" Height="180"/>
-        <Button x:Name="btnSparletta" Content="Sparletta" Click="btnSparletta_Click" Margin="745,109,0,195" Width="140" Height="180" HorizontalAlignment="Left"/>
+        <Button x:Name="btnSparletta" Content="Sparletta" Click="btnSparletta_Click" Margin="794,164,0,250" Width="140" Height="180" HorizontalAlignment="Left"/>
         <Button x:Name="btnTing" Content="Ting" Click="btnTing_Click" Margin="890,109,20,195" Width="140" Height="180"/>
 
         <Button x:Name="btnMatchaShake" Content="Matcha Green Tea Shake" Click="btnMatchaShake_Click" Margin="17,294,893,10" Width="140" Height="180"/>

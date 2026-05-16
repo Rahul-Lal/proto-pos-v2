@@ -281,8 +281,6 @@ namespace proto_pos_v2
                                 // prices.Add(price + 7.5);
                                 totalAmount(total);
 
-
-
                                 sideOption(chosenCombo, "Large");
 
                                 makeCombo.makeLarge = false;
