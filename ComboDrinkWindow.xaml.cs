@@ -54,5 +54,12 @@ namespace proto_pos_v2
             chosenDrink = "Irn Bru";
             this.Close();
         }
+
+        private void btnLnP_Click(object sender, RoutedEventArgs e)
+        {
+            isSoda = true;
+            chosenDrink = "LnP";
+            this.Close();
+        }
     }
 }
