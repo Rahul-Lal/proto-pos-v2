@@ -89,5 +89,12 @@ namespace proto_pos_v2
             chosenDrink = "Churro Cinnamon Shake";
             this.Close();
         }
+
+        private void btnMangoLassiShake_Click(object sender, RoutedEventArgs e)
+        {
+            isShake = true;
+            chosenDrink = "Mango Lassi Shake";
+            this.Close();
+        }
     }
 }
