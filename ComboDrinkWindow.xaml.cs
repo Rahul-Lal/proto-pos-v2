@@ -47,5 +47,12 @@ namespace proto_pos_v2
             chosenDrink = "Jarritos Grapefruit";
             this.Close();
         }
+
+        private void btnIrnBru_Click(object sender, RoutedEventArgs e)
+        {
+            isSoda = true;
+            chosenDrink = "Irn Bru";
+            this.Close();
+        }
     }
 }
