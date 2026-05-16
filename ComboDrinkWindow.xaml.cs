@@ -75,5 +75,12 @@ namespace proto_pos_v2
             chosenDrink = "Ting";
             this.Close();
         }
+
+        private void btnMatchaShake_Click(object sender, RoutedEventArgs e)
+        {
+            isShake = true;
+            chosenDrink = "Matcha Green Tea Shake";
+            this.Close();
+        }
     }
 }
