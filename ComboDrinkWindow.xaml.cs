@@ -61,5 +61,12 @@ namespace proto_pos_v2
             chosenDrink = "LnP";
             this.Close();
         }
+
+        private void btnSparletta_Click(object sender, RoutedEventArgs e)
+        {
+            isSoda = true;
+            chosenDrink = "Sparletta Cream Soda";
+            this.Close();
+        }
     }
 }
