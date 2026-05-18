@@ -23,5 +23,27 @@ namespace proto_pos_v2
             InitializeComponent();
             _home = home;
         }
+
+        private void loadComboBoxes()
+        {
+
+            foreach (string burger in europeanBurgers)
+            {
+                cbxEuropeanOne.Items.Add(burger);
+                cbxEuropeanTwo.Items.Add(burger);
+            }
+            foreach (string burger in chickenOthers)
+            {
+                cbxChickOtherOne.Items.Add(burger);
+                cbxChickOtherTwo.Items.Add(burger);
+
+            }
+
+            cbxEuropeanOne.Text = cbxEuropeanOne.Items[0].ToString();
+            cbxEuropeanTwo.Text = cbxEuropeanTwo.Items[0].ToString();
+
+            cbxChickOtherOne.Text = cbxChickOtherOne.Items[4].ToString();
+            cbxChickOtherTwo.Text = cbxChickOtherTwo.Items[4].ToString();
+        }
     }
 }
