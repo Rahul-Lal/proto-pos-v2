@@ -61,5 +61,11 @@ namespace proto_pos_v2
             _home.txtOutput.Text += "4 Small Fries\n";
             _home.txtOutput.Text += "4 Small Drinks\n";
         }
+
+        public void btnOK_Click(object sender, RoutedEventArgs e)
+        {
+            selectComboItems();
+            this.Close();
+        }
     }
 }
