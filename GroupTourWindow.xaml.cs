@@ -17,9 +17,11 @@ namespace proto_pos_v2
     /// </summary>
     public partial class GroupTourWindow : Window
     {
-        public GroupTourWindow()
+        private readonly HomePage _home;
+        public GroupTourWindow(HomePage home)
         {
             InitializeComponent();
+            _home = home;
         }
     }
 }
