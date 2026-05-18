@@ -45,5 +45,21 @@ namespace proto_pos_v2
             cbxChickOtherOne.Text = cbxChickOtherOne.Items[4].ToString();
             cbxChickOtherTwo.Text = cbxChickOtherTwo.Items[4].ToString();
         }
+
+        public void selectComboItems()
+        {
+            string europeanBurgerOne = cbxEuropeanOne.SelectedItem.ToString();
+            string europeanBurgerTwo = cbxEuropeanTwo.SelectedItem.ToString();
+            string chickenOtherOne = cbxChickOtherOne.SelectedItem.ToString();
+            string chickenOtherTwo = cbxChickOtherTwo.SelectedItem.ToString();
+
+            _home.txtOutput.Text += europeanBurgerOne + "\n";
+            _home.txtOutput.Text += europeanBurgerTwo + "\n";
+            _home.txtOutput.Text += chickenOtherOne + "\n";
+            _home.txtOutput.Text += chickenOtherTwo + "\n";
+
+            _home.txtOutput.Text += "4 Small Fries\n";
+            _home.txtOutput.Text += "4 Small Drinks\n";
+        }
     }
 }
