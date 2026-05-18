@@ -67,5 +67,10 @@ namespace proto_pos_v2
             selectComboItems();
             this.Close();
         }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
