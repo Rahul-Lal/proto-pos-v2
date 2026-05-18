@@ -752,15 +752,32 @@ namespace proto_pos_v2
 
         private void btnGroupTour_Click(object sender, RoutedEventArgs e)
         {
-            //var groupTourWindow = new GroupTourWindow(this);
-            //groupTourWindow.ShowDialog();
+            var groupTourWindow = new GroupTourWindow(this);
+            groupTourWindow.ShowDialog();
 
 
-            //total += 40.00;
+            string constring = "Server=(localdb)\\MSSQLLocalDB;Database=TestPOSDB;Trusted_Connection=true;TrustServerCertificate=true";
 
-            //txtPrices.Text += "$" + total.ToString() + ".00\n\n\n\n\n\n";
-            //totalAmount(total);
-            //orderLinesViaConsole();
+            using (SqlConnection con = new SqlConnection(constring))
+            {
+                con.Open();
+
+                string query = $"SELECT Name, BasePrice FROM MenuItem WHERE Name = @name";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@name", burger);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string price = reader["BasePrice"].ToString();
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private void btnMozzarellaSticksAddOn_Click(object sender, RoutedEventArgs e)
