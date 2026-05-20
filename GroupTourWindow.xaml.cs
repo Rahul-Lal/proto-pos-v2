@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -26,24 +27,32 @@ namespace proto_pos_v2
 
         private void loadComboBoxes()
         {
+            string constring = "Server=(localdb)\\MSSQLLocalDB;Database=TestPOSDB;Trusted_Connection=true;TrustServerCertificate=true";
 
-            foreach (string burger in europeanBurgers)
+            using (SqlConnection con = new SqlConnection(constring))
             {
-                cbxEuropeanOne.Items.Add(burger);
-                cbxEuropeanTwo.Items.Add(burger);
+                con.Open();
+
+                string query = $"SELECT Name, BasePrice FROM MenuItem WHERE Name = @name";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@name", menuitem);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string name = reader["Name"].ToString();
+                            string price = reader["BasePrice"].ToString();
+                            txtOutput.Text += name + "\n";
+                            txtPrices.Text += $"${double.Parse(price):0.00}\n";
+                            total += double.Parse(price);
+                            totalAmount(total);
+                        }
+                    }
+                }
             }
-            foreach (string burger in chickenOthers)
-            {
-                cbxChickOtherOne.Items.Add(burger);
-                cbxChickOtherTwo.Items.Add(burger);
-
-            }
-
-            cbxEuropeanOne.Text = cbxEuropeanOne.Items[0].ToString();
-            cbxEuropeanTwo.Text = cbxEuropeanTwo.Items[0].ToString();
-
-            cbxChickOtherOne.Text = cbxChickOtherOne.Items[4].ToString();
-            cbxChickOtherTwo.Text = cbxChickOtherTwo.Items[4].ToString();
         }
 
         public void selectComboItems()
