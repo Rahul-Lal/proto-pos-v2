@@ -33,22 +33,17 @@ namespace proto_pos_v2
             {
                 con.Open();
 
-                string query = $"SELECT Name, BasePrice FROM MenuItem WHERE Name = @name";
+                string europeanQuery = $"SELECT Name FROM MenuItem WHERE CategoryID = 1 ";
 
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                using (SqlCommand cmd = new SqlCommand(europeanQuery, con))
                 {
-                    cmd.Parameters.AddWithValue("@name", menuitem);
+                    cmd.Parameters.AddWithValue("@categoryid", 1);
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
                         {
                             string name = reader["Name"].ToString();
-                            string price = reader["BasePrice"].ToString();
-                            txtOutput.Text += name + "\n";
-                            txtPrices.Text += $"${double.Parse(price):0.00}\n";
-                            total += double.Parse(price);
-                            totalAmount(total);
                         }
                     }
                 }
