@@ -34,6 +34,7 @@ namespace proto_pos_v2
                 con.Open();
 
                 string europeanQuery = $"SELECT Name FROM MenuItem WHERE CategoryID = 1 ";
+                string chickenQuery = $"SELECT Name FROM MenuItem WHERE CategoryID = 2 ";
 
                 using (SqlCommand cmd = new SqlCommand(europeanQuery, con))
                 {
