@@ -33,12 +33,13 @@ namespace proto_pos_v2
             {
                 con.Open();
 
-                string europeanQuery = $"SELECT Name FROM MenuItem WHERE CategoryID = 1 ";
-                string chickenQuery = $"SELECT Name FROM MenuItem WHERE CategoryID = 2 ";
+                string europeanQuery = $"SELECT Name FROM dbo.MenuItem WHERE CategoryId = 1 AND Name LIKE '%Single%'";
+                string chickenQuery = $"SELECT Name FROM MenuItem WHERE CategoryID =2";
 
                 using (SqlCommand cmd = new SqlCommand(europeanQuery, con))
                 {
                     cmd.Parameters.AddWithValue("@categoryid", 1);
+                    cmd.Parameters.AddWithValue("@categoryid", 2);
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
