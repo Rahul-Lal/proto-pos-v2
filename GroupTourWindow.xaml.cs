@@ -34,18 +34,32 @@ namespace proto_pos_v2
                 con.Open();
 
                 string europeanQuery = $"SELECT Name FROM dbo.MenuItem WHERE CategoryId = 1 AND Name LIKE '%Single%'";
-                string chickenQuery = $"SELECT Name FROM MenuItem WHERE CategoryID =2";
+                string chickenQuery = $"SELECT Name FROM dbo.MenuItem WHERE CategoryId = 2";
 
-                using (SqlCommand cmd = new SqlCommand(europeanQuery, con))
+                using (SqlCommand euroCMD = new SqlCommand(europeanQuery, con))
                 {
-                    cmd.Parameters.AddWithValue("@categoryid", 1);
-                    cmd.Parameters.AddWithValue("@categoryid", 2);
+                    euroCMD.Parameters.AddWithValue("@categoryid", 1);
 
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    using (SqlDataReader reader = euroCMD.ExecuteReader())
                     {
                         if (reader.Read())
                         {
+                            int categoryId = Convert.ToInt32(reader["CategoryId"].ToString());
                             string name = reader["Name"].ToString();
+                        }
+                    }
+
+                    using (SqlCommand chickenCMD = new SqlCommand(chickenQuery, con))
+                    {
+                        chickenCMD.Parameters.AddWithValue("@categoryid", 2);
+
+                        using (SqlDataReader reader = chickenCMD.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                int categoryId = Convert.ToInt32(reader["CategoryId"].ToString());
+                                string name = reader["Name"].ToString();
+                            }
                         }
                     }
                 }
