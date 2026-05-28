@@ -10,12 +10,12 @@
         <Label Content="Select your burger options:" HorizontalAlignment="Center" Margin="0,27,0,0" VerticalAlignment="Top" FontSize="30" FontFamily="Agency FB" Width="541" HorizontalContentAlignment="Center"/>
 
         <Label Content="European Burgers:" HorizontalAlignment="Center" Margin="0,122,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Agency FB"/>
-        <ComboBox Text="Select A European Burger" x:Name="cbxEuropeanOne"  HorizontalAlignment="Left" Margin="130,156,0,0" VerticalAlignment="Top" Width="224"/>
-        <ComboBox Text="Select A European Burger" x:Name="cbxEuropeanTwo"  HorizontalAlignment="Left" Margin="446,156,0,0" VerticalAlignment="Top" Width="224"/>
+        <ComboBox Text="Select A European Burger" IsEditable="True" IsReadOnly="True" x:Name="cbxEuropeanOne"  HorizontalAlignment="Left" Margin="130,156,0,0" VerticalAlignment="Top" Width="224"/>
+        <ComboBox Text="Select A European Burger" IsEditable="True" IsReadOnly="True" x:Name="cbxEuropeanTwo"  HorizontalAlignment="Left" Margin="446,156,0,0" VerticalAlignment="Top" Width="224"/>
 
         <Label Content="Chicken And Other Burgers:" HorizontalAlignment="Center" Margin="0,204,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Agency FB"/>
-        <ComboBox Text="Select a Chicken and Other Burger" x:Name="cbxChickOtherOne"  HorizontalAlignment="Left" Margin="130,238,0,0" VerticalAlignment="Top" Width="224"/>
-        <ComboBox Text="Select a Chicken and Other Burger" x:Name="cbxChickOtherTwo"  HorizontalAlignment="Left" Margin="446,238,0,0" VerticalAlignment="Top" Width="224"/>
+        <ComboBox Text="Select a Chicken and Other Burger" IsEditable="True" IsReadOnly="True" x:Name="cbxChickOtherOne"  HorizontalAlignment="Left" Margin="130,238,0,0" VerticalAlignment="Top" Width="224"/>
+        <ComboBox Text="Select a Chicken and Other Burger" IsEditable="True" IsReadOnly="True" x:Name="cbxChickOtherTwo"  HorizontalAlignment="Left" Margin="446,238,0,0" VerticalAlignment="Top" Width="224"/>
         <Button x:Name="btnOK" Click="btnOK_Click" Content="OK" HorizontalAlignment="Center" Margin="0,294,0,0" VerticalAlignment="Top" Width="116" Height="45"/>
 
     </Grid>
