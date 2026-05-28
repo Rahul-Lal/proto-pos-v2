@@ -754,30 +754,6 @@ namespace proto_pos_v2
         {
             var groupTourWindow = new GroupTourWindow(this);
             groupTourWindow.ShowDialog();
-
-
-            string constring = "Server=(localdb)\\MSSQLLocalDB;Database=TestPOSDB;Trusted_Connection=true;TrustServerCertificate=true";
-
-            using (SqlConnection con = new SqlConnection(constring))
-            {
-                con.Open();
-
-                string query = $"SELECT Name, BasePrice FROM MenuItem WHERE Name = @name";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@name", burger);
-
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            string price = reader["BasePrice"].ToString();
-                            }
-                        }
-                    }
-                }
-            }
         }
 
         private void btnMozzarellaSticksAddOn_Click(object sender, RoutedEventArgs e)

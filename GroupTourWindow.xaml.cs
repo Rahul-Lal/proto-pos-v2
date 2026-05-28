@@ -23,6 +23,7 @@ namespace proto_pos_v2
         {
             InitializeComponent();
             _home = home;
+            loadComboBoxes();
         }
 
         private void loadComboBoxes()
@@ -44,8 +45,12 @@ namespace proto_pos_v2
                     {
                         if (reader.Read())
                         {
-                            int categoryId = Convert.ToInt32(reader["CategoryId"].ToString());
                             string name = reader["Name"].ToString();
+
+                            Console.WriteLine(name);
+
+                            cbxEuropeanOne.Items.Add(name);
+                            cbxEuropeanTwo.Items.Add(name);
                         }
                     }
 
@@ -57,7 +62,7 @@ namespace proto_pos_v2
                         {
                             if (reader.Read())
                             {
-                                int categoryId = Convert.ToInt32(reader["CategoryId"].ToString());
+                                var categoryId = reader["CategoryId"].ToString();
                                 string name = reader["Name"].ToString();
                             }
                         }
