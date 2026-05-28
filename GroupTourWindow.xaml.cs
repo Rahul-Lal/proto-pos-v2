@@ -43,7 +43,7 @@ namespace proto_pos_v2
 
                     using (SqlDataReader reader = euroCMD.ExecuteReader())
                     {
-                        if (reader.Read())
+                        while (reader.Read())
                         {
                             string name = reader["Name"].ToString();
 
@@ -60,7 +60,7 @@ namespace proto_pos_v2
 
                         using (SqlDataReader reader = chickenCMD.ExecuteReader())
                         {
-                            if (reader.Read())
+                            while (reader.Read())
                             {
                                 var categoryId = reader["CategoryId"].ToString();
                                 string name = reader["Name"].ToString();
