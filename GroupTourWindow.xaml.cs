@@ -34,11 +34,28 @@ namespace proto_pos_v2
             {
                 con.Open();
 
-                // =========================
-                // European Burgers
-                // =========================
+                string priceQuery = "SELECT BasePrice FROM dbo.MenuItem WHERE Name LIKE '%Group Tour%'";
 
-                string europeanQuery = "SELECT Name FROM dbo.MenuItem " + "WHERE CategoryId = @categoryId " + "AND Name LIKE '%Single%'";
+                using (SqlCommand priceCMD = new SqlCommand(priceQuery, con))
+                {
+                    priceCMD.Parameters.AddWithValue("@name", "Group Tour Bundle");
+
+                    using (SqlDataReader reader = priceCMD.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            decimal price = reader.GetDecimal(0);
+                            _home.txtOutput.Text += "GROUP TOUR BUNDLE \n";
+                            _home.txtPrices.Text += price.ToString("C") + "\n\n\n\n\n\n\n";
+                        }
+                    }
+                }
+
+                    // =========================
+                    // European Burgers
+                    // =========================
+
+                    string europeanQuery = "SELECT Name FROM dbo.MenuItem " + "WHERE CategoryId = @categoryId " + "AND Name LIKE '%Single%'";
 
                 using (SqlCommand euroCMD = new SqlCommand(europeanQuery, con))
                 {
@@ -87,7 +104,6 @@ namespace proto_pos_v2
             string chickenOtherOne = cbxChickOtherOne.SelectedItem.ToString();
             string chickenOtherTwo = cbxChickOtherTwo.SelectedItem.ToString();
 
-            _home.txtOutput.Text += "GROUP TOUR BUNDLE \n";
             _home.txtOutput.Text += europeanBurgerOne + "\n";
             _home.txtOutput.Text += europeanBurgerTwo + "\n";
             _home.txtOutput.Text += chickenOtherOne + "\n";
