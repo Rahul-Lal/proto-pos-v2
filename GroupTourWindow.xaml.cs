@@ -28,18 +28,21 @@ namespace proto_pos_v2
 
         private void loadComboBoxes()
         {
-            string constring = "Server=(localdb)\\MSSQLLocalDB;Database=TestPOSDB;Trusted_Connection=true;TrustServerCertificate=true";
+            string constring = "Server=(localdb)\\MSSQLLocalDB;" + "Database=TestPOSDB;" + "Trusted_Connection=true;" + "TrustServerCertificate=true";
 
             using (SqlConnection con = new SqlConnection(constring))
             {
                 con.Open();
 
-                string europeanQuery = $"SELECT Name FROM dbo.MenuItem WHERE CategoryId = 1 AND Name LIKE '%Single%'";
-                string chickenQuery = $"SELECT Name FROM dbo.MenuItem WHERE CategoryId = 2";
+                // =========================
+                // European Burgers
+                // =========================
+
+                string europeanQuery = "SELECT Name FROM dbo.MenuItem " + "WHERE CategoryId = @categoryId " + "AND Name LIKE '%Single%'";
 
                 using (SqlCommand euroCMD = new SqlCommand(europeanQuery, con))
                 {
-                    euroCMD.Parameters.AddWithValue("@categoryid", 1);
+                    euroCMD.Parameters.AddWithValue("@categoryId", 1);
 
                     using (SqlDataReader reader = euroCMD.ExecuteReader())
                     {
@@ -47,24 +50,30 @@ namespace proto_pos_v2
                         {
                             string name = reader["Name"].ToString();
 
-                            Console.WriteLine(name);
-
                             cbxEuropeanOne.Items.Add(name);
                             cbxEuropeanTwo.Items.Add(name);
                         }
                     }
+                }
 
-                    using (SqlCommand chickenCMD = new SqlCommand(chickenQuery, con))
+                // =========================
+                // Chicken / Other Burgers
+                // =========================
+
+                string chickenQuery = "SELECT Name FROM dbo.MenuItem " + "WHERE CategoryId = @categoryId";
+
+                using (SqlCommand chickenCMD = new SqlCommand(chickenQuery, con))
+                {
+                    chickenCMD.Parameters.AddWithValue("@categoryId", 2);
+
+                    using (SqlDataReader reader = chickenCMD.ExecuteReader())
                     {
-                        chickenCMD.Parameters.AddWithValue("@categoryid", 2);
-
-                        using (SqlDataReader reader = chickenCMD.ExecuteReader())
+                        while (reader.Read())
                         {
-                            while (reader.Read())
-                            {
-                                var categoryId = reader["CategoryId"].ToString();
-                                string name = reader["Name"].ToString();
-                            }
+                            string name = reader["Name"].ToString();
+
+                            cbxChickOtherOne.Items.Add(name);
+                            cbxChickOtherTwo.Items.Add(name);
                         }
                     }
                 }
