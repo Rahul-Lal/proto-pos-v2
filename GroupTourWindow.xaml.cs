@@ -87,6 +87,7 @@ namespace proto_pos_v2
             string chickenOtherOne = cbxChickOtherOne.SelectedItem.ToString();
             string chickenOtherTwo = cbxChickOtherTwo.SelectedItem.ToString();
 
+            _home.txtOutput.Text += "GROUP TOUR BUNDLE \n";
             _home.txtOutput.Text += europeanBurgerOne + "\n";
             _home.txtOutput.Text += europeanBurgerTwo + "\n";
             _home.txtOutput.Text += chickenOtherOne + "\n";
@@ -94,6 +95,7 @@ namespace proto_pos_v2
 
             _home.txtOutput.Text += "4 Medium Fries\n";
             _home.txtOutput.Text += "4 Medium Drinks\n";
+
         }
 
         public void btnOK_Click(object sender, RoutedEventArgs e)
