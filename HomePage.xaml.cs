@@ -299,6 +299,8 @@ namespace proto_pos_v2
                                 // prices.Add(price + 5);
                                 totalAmount(total);
 
+                                sideOption(chosenCombo, "Medium");
+
                                 makeCombo.makeMedium = false;
                                 makeCombo.Close();
                             }
