@@ -24,21 +24,27 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="300*"/>
                         <ColumnDefinition Width="300*"/>
-                        <ColumnDefinition Width="300*"/>
-                        <ColumnDefinition Width="300*"/>
-                        <ColumnDefinition Width="300*"/>
+                        <ColumnDefinition Width="97*"/>
+                        <ColumnDefinition Width="187*"/>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="92*"/>
+                        <ColumnDefinition Width="207*"/>
+                        <ColumnDefinition Width="22*"/>
+                        <ColumnDefinition Width="148*"/>
+                        <ColumnDefinition Width="121*"/>
+                        <ColumnDefinition Width="9*"/>
                     </Grid.ColumnDefinitions>
 
                     <Button x:Name="btnSingleOlympian" Content="Single Olympian" Width="266" Height="320" FontSize="16" Margin="10,37,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnSingleOlympian_Click"/>
                     <Button x:Name="btnDoubleOlympian" Content="Double Olympian" Width="266" Height="320" FontSize="16" Margin="9,37,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnDoubleOlympian_Click" RenderTransformOrigin="-0.356,0.981" Grid.Column="1"/>
-                    <Button x:Name="btnSingleParisian" Content="Single Parisian" Width="266" Height="320" FontSize="16" Margin="10,37,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnSingleParisian_Click" Grid.Column="2"/>
-                    <Button x:Name="btnDoubleParisian" Content="Double Parisian" Width="266" Height="320" FontSize="16" Margin="9,37,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnDoubleParisian_Click" RenderTransformOrigin="0.5,0.5" Grid.Column="3"/>
-                    <Button x:Name="btnSingleRoma" Content="Single Roma" Width="266" Height="320" FontSize="16" Margin="0,37,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnSingleRoma_Click" Grid.Column="4"/>
+                    <Button x:Name="btnSingleParisian" Content="Single Parisian" Width="266" Height="320" FontSize="16" Margin="10,37,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnSingleParisian_Click" Grid.Column="2" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnDoubleParisian" Content="Double Parisian" Width="266" Height="320" FontSize="16" Margin="9,37,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnDoubleParisian_Click" RenderTransformOrigin="0.5,0.5" Grid.Column="5" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnSingleRoma" Content="Single Roma" Width="266" Height="320" FontSize="16" Margin="17,37,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnSingleRoma_Click" Grid.Column="7" Grid.ColumnSpan="3"/>
                     <Button x:Name="btnDoubleRoma" Content="Double Roma" Height="320" FontSize="16" Margin="10,38,0,0" VerticalAlignment="Top" Click="btnDoubleRoma_Click" HorizontalAlignment="Left" Width="266" Grid.Row="1" RenderTransformOrigin="0.167,0.55"/>
                     <Button x:Name="btnSingleMatador" Content="Single Matador" Width="266" Height="320" FontSize="16" Margin="9,38,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnSingleMatador_Click" Grid.Column="1" Grid.Row="1"/>
-                    <Button x:Name="btnDoubleMatador" Content="Double Matador" Width="266" Height="320" FontSize="16" Margin="10,38,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnDoubleMatador_Click" Grid.Column="2" Grid.Row="1"/>
-                    <Button x:Name="btnSingleKaiser" Content="Single Kaiser" Width="266" Height="320" FontSize="16" Margin="9,38,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnSingleKaiser_Click" RenderTransformOrigin="0.582,0.52" Grid.Row="1" Grid.Column="3"/>
-                    <Button x:Name="btnDoubleKaiser" Content="Double Kaiser" Width="266" Height="320" FontSize="16" Margin="10,38,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnDoubleKaiser_Click" Grid.Column="4" Grid.Row="1"/>
+                    <Button x:Name="btnDoubleMatador" Content="Double Matador" Width="266" Height="320" FontSize="16" Margin="10,38,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnDoubleMatador_Click" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnSingleKaiser" Content="Single Kaiser" Width="266" Height="320" FontSize="16" Margin="9,38,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnSingleKaiser_Click" RenderTransformOrigin="0.582,0.52" Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnDoubleKaiser" Content="Double Kaiser" Width="266" Height="320" FontSize="16" Margin="10,38,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnDoubleKaiser_Click" Grid.Column="7" Grid.Row="1" Grid.ColumnSpan="3"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="btnChickenOther" Header="Chicken + Other" Width="250" Height="100" FontSize="16">
@@ -141,17 +147,17 @@
 
                     <Button x:Name="btnCoke" Content="Coke" Width="200" Height="257" FontSize="30" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Click="btnCoke_Click" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Agency FB" VerticalContentAlignment="Center" Margin="10,2,0,0" Grid.Row="1" />
                     <Button x:Name="btnCokeNS" Content="Coke NS" Width="200" Height="257" FontSize="30" HorizontalAlignment="Left" Click="btnCokeNS_Click" RenderTransformOrigin="0.5,0.5" Grid.Column="1" VerticalAlignment="Top" FontFamily="Agency FB" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="4,2,0,0" Grid.Row="1" />
-                    
+
                     <Button x:Name="btnJarritos" Content="Jarritos" Width="200" Height="257" FontSize="30" HorizontalAlignment="Left" Click="btnJarritos_Click" Grid.Column="2" VerticalAlignment="Top" FontFamily="Agency FB" FontWeight="Bold" Margin="4,2,0,0" Grid.Row="1" />
-                    
+
                     <Button x:Name="btnIrnBru" Content="Irn Bru" Width="200" Height="257" FontSize="30" HorizontalAlignment="Left" Click="btnIrnBru_Click" Grid.Column="3" VerticalAlignment="Top" FontFamily="Agency FB" FontWeight="Bold" Margin="4,2,0,0" Grid.Row="1" />
-                    
+
                     <Button x:Name="btnLnP" Content="LnP" Width="200" Height="259" FontSize="30" HorizontalAlignment="Center" Click="btnLnP_Click" RenderTransformOrigin="0.567,0.123" Grid.Column="4" VerticalAlignment="Top" FontFamily="Agency FB" FontWeight="Bold" Margin="0,2,0,0" Grid.Row="1" />
-                    
+
                     <Button x:Name="btnSparletta" Content="Sparletta" Width="200" Height="257" FontSize="30" HorizontalAlignment="Left" Click="btnSparletta_Click" Grid.Column="5" VerticalAlignment="Top" FontFamily="Agency FB" FontWeight="Bold" Margin="4,2,0,0" Grid.Row="1" />
-                    
+
                     <Button x:Name="btnSmallTing" Content="Ting" Width="200" Height="257" FontSize="30" HorizontalAlignment="Left" Click="btnTing_Click" Grid.Column="6" VerticalAlignment="Top" FontFamily="Agency FB" FontWeight="Bold" Margin="4,2,0,0" Grid.Row="1" />
-                    
+
                     <Button x:Name="btnMediumDrink" Click="btnMediumDrink_Click" Grid.Column="3" Content="Medium" HorizontalAlignment="Left" Margin="4,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="200" Height="130"/>
                     <Button x:Name="btnSmallDrink" Click="btnSmallDrink_Click" Grid.Column="1" Content="Small" HorizontalAlignment="Left" Margin="4,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="200" Height="130"/>
                     <Button x:Name="btnLargeDrink" Click="btnLargeDrink_Click" Grid.Column="5" Content="Large" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Width="200" Height="130"/>

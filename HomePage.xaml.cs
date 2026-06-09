@@ -186,6 +186,7 @@ namespace proto_pos_v2
             txtTotal.Text = total.ToString("C");
 
         }
+
         private void sideOption(string combo, string size)
         {
             ComboSideWindow comboSide = new ComboSideWindow(this);
