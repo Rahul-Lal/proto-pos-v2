@@ -10,11 +10,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="media\Money\Fifty.jpg" />
+    <None Remove="media\Money\Five.jpg" />
+    <None Remove="media\Money\One Hundred.jpg" />
+    <None Remove="media\Money\Ten.jpg" />
+    <None Remove="media\Money\Twenty.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="media\" />
+    <Resource Include="media\Money\Fifty.jpg" />
+    <Resource Include="media\Money\Five.jpg" />
+    <Resource Include="media\Money\One Hundred.jpg" />
+    <Resource Include="media\Money\Ten.jpg" />
+    <Resource Include="media\Money\Twenty.jpg" />
   </ItemGroup>
 
 </Project>
