@@ -27,5 +27,34 @@ namespace proto_pos_v2
             amountOwed = total;
             txtTotalPrice.Text = amountOwed.ToString("0.00");
         }
+
+        private void ApplyPayment(double amount)
+        {
+            if (amount <= 0)
+            {
+                this.Close();
+            }
+
+            amountOwed -= amount;
+
+            if (amountOwed > 0)
+            {
+                // Still money left to pay
+                txtTotalPrice.Text = amountOwed.ToString("0.00");
+            }
+            else
+            {
+                // Payment complete (or overpaid)
+                double change = Math.Abs(amountOwed);
+
+                MessageBox.Show($"Payment Complete. Change: ${change:0.00}");
+
+                amountOwed = 0;
+                txtTotalPrice.Text = "0.00";
+
+                clearOutput();
+                this.Close();
+            }
+        }
     }
 }
