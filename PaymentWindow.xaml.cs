@@ -28,6 +28,14 @@ namespace proto_pos_v2
             txtTotalPrice.Text = amountOwed.ToString("0.00");
         }
 
+        private void clearOutput()
+        {
+            _home.txtOutput.Text = "";
+            _home.txtPrices.Text = "";
+            _home.total = 0.0;
+            _home.txtTotal.Text = _home.total.ToString("C");
+        }
+
         private void ApplyPayment(double amount)
         {
             if (amount <= 0)
