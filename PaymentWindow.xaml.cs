@@ -19,5 +19,13 @@ namespace proto_pos_v2
     {
         private double amountOwed;
         private readonly HomePage _home;
+
+        public PaymentWindow(HomePage home, double total)
+        {
+            InitializeComponent();
+            _home = home;
+            amountOwed = total;
+            txtTotalPrice.Text = amountOwed.ToString("0.00");
+        }
     }
 }
