@@ -241,6 +241,7 @@ namespace proto_pos_v2
             }
 
             txtOutput.Text += combo;
+            totalAmount(total);
         }
 
         private void comboOption(string burger)
