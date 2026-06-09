@@ -13,4 +13,11 @@
     <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="media\Drinks\" />
+    <Folder Include="media\Desserts\" />
+    <Folder Include="media\Combos\" />
+    <Folder Include="media\Sides\" />
+  </ItemGroup>
+
 </Project>
