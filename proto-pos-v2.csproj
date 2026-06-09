@@ -14,9 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="media\Drinks\" />
-    <Folder Include="media\Desserts\" />
-    <Folder Include="media\Combos\" />
+    <Folder Include="media\" />
   </ItemGroup>
 
 </Project>
