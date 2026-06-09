@@ -17,9 +17,7 @@ namespace proto_pos_v2
     /// </summary>
     public partial class PaymentWindow : Window
     {
-        public PaymentWindow()
-        {
-            InitializeComponent();
-        }
+        private double amountOwed;
+        private readonly HomePage _home;
     }
 }
