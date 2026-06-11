@@ -64,5 +64,10 @@ namespace proto_pos_v2
                 this.Close();
             }
         }
+
+        private void btnExactAmount_Click(object sender, RoutedEventArgs e)
+        {
+            ApplyPayment(amountOwed);
+        }
     }
 }
