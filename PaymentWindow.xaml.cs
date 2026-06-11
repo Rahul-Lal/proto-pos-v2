@@ -91,5 +91,10 @@ namespace proto_pos_v2
         {
             ApplyPayment(100);
         }
+
+        private void btnFiftyDollars_Click(object sender, RoutedEventArgs e)
+        {
+            ApplyPayment(50);
+        }
     }
 }
