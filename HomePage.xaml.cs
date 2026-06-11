@@ -782,7 +782,7 @@ namespace proto_pos_v2
 
         private void btnPayment_Click(object sender, RoutedEventArgs e)
         {
-            //var paymentWindow = new PaymentWindow(this, total);
+            var paymentWindow = new PaymentWindow(this, total);
             //paymentWindow.ShowDialog();
         }
 
