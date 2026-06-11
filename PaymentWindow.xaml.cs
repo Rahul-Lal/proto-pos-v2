@@ -69,5 +69,11 @@ namespace proto_pos_v2
         {
             ApplyPayment(amountOwed);
         }
+
+        private void btnEftpos_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("EFTPOS Accepted!");
+            ApplyPayment(amountOwed);
+        }
     }
 }
