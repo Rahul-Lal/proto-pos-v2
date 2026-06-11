@@ -75,5 +75,16 @@ namespace proto_pos_v2
             MessageBox.Show("EFTPOS Accepted!");
             ApplyPayment(amountOwed);
         }
+
+        private void btnCash_Click(object sender, RoutedEventArgs e)
+        {
+            if (!double.TryParse(txtCash.Text, out double cashInput))
+            {
+                MessageBox.Show("Invalid cash amount.");
+                return;
+            }
+
+            ApplyPayment(cashInput);
+        }
     }
 }
