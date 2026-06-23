@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -28,6 +29,25 @@ namespace proto_pos_v2
             txtTotalPrice.Text = amountOwed.ToString("0.00");
         }
 
+        private void insertOrderToDB(double totalAmount)
+        {
+            string constring = "Server=(localdb)\\MSSQLLocalDB;Database=TestPOSDB;Trusted_Connection=true;TrustServerCertificate=true";
+
+            using (SqlConnection con = new SqlConnection(constring))
+            {
+                con.Open();
+
+                string paymentQuery = $"INSERT INTO dbo.Orders (OrderDate, TotalAmount, IsPaid) VALUES ( CURRENT_TIMESTAMP, @totalAmount, 1)";
+
+                using (SqlCommand cmd = new SqlCommand(paymentQuery, con))
+                {
+                    cmd.Parameters.AddWithValue("@totalAmount", amountOwed); // Assuming you want to insert the total amount owed
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
         private void clearOutput()
         {
             _home.txtOutput.Text = "";
@@ -42,8 +62,10 @@ namespace proto_pos_v2
             {
                 this.Close();
             }
+            insertOrderToDB(amountOwed);
 
             amountOwed -= amount;
+
 
             if (amountOwed > 0)
             {
